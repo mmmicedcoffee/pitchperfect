@@ -29,6 +29,11 @@
 	    margin-bottom: 0;
 	}
 	</style>
+
+	<!-- Load js scripts at end of page so pages load faster -->
+    <script type="text/javascript" src="external_js/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="external_js/vexflow-min.js"></script>
 </head>
 
 <body>
@@ -96,15 +101,67 @@
 	    				<h2 class="text-center">The Sign</h2>
 	    			</div>
 	    			<div class="span1">
-	    				<div class="btn-group">	    					
-	    					<button class="btn btn-small vertical-center" data-toggle="button">
+	    				<div class="btn-group" data-toggle="buttons-checkbox">	    					
+	    					<button class="btn btn-small vertical-center">
 	    						<i class="icon-play"></i>
 	    					</button>
-	    					<button class="btn btn-small vertical-center" data-toggle="button">
+	    					<button class="btn btn-small vertical-center">
 	    						<i class="icon-music"></i>
 	    					</button>
 	    				</div>
 	    			</div>
+    			</div> <!-- /row -->
+    			<div class="row">
+    				<div class="span8">
+	    				<canvas width="640" height="200"></canvas>
+	    				<p>
+							<script>
+								var canvas = $("canvas")[0];
+							    var renderer = new Vex.Flow.Renderer(canvas,
+							    Vex.Flow.Renderer.Backends.CANVAS);
+
+							    var ctx = renderer.getContext();
+							    var stave = new Vex.Flow.Stave(10, 0, 620);
+							    stave.addClef("treble").setContext(ctx).draw();
+							    stave.addTimeSignature("4/4").setContext(ctx).draw();
+
+							    var staveTwo = new Vex.Flow.Stave(10, 100, 620);
+							    staveTwo.addClef("treble").setContext(ctx).draw();
+							    staveTwo.addTimeSignature("4/4").setContext(ctx).draw();
+
+							    // Create the notes
+								var notes = [
+								    // A quarter-note C.
+								    new Vex.Flow.StaveNote({ keys: ["c/4"], duration: "q" }),
+								    // A quarter-note D.
+								    new Vex.Flow.StaveNote({ keys: ["d/4"], duration: "q" }),
+								    // A quarter-note rest. Note that the key (b/4) specifies the vertical
+								    // position of the rest.
+								    new Vex.Flow.StaveNote({ keys: ["b/4"], duration: "qr" }),
+								    // A C-Major chord.
+								    new Vex.Flow.StaveNote({ keys: ["c/4", "e/4", "g/4"], duration: "q" })
+								];
+
+								// Create a voice in 4/4
+								var voice = new Vex.Flow.Voice({
+								    num_beats: 4,
+								    beat_value: 4,
+								    resolution: Vex.Flow.RESOLUTION
+								});
+
+								// Add notes to voice
+								voice.addTickables(notes);
+
+								// Format and justify the notes to 500 pixels
+								var formatter = new Vex.Flow.Formatter().
+								    joinVoices([voice]).format([voice], 620);
+
+								// Render voice
+								voice.draw(ctx, stave);
+								voice.draw(ctx, staveTwo);
+							</script>
+						</p>
+					</div>
     			</div>
     		</div>
     	</div>
@@ -124,9 +181,5 @@
 		</div>
 	</div>
 
-
-    <!-- Load js scripts at end of page so pages load faster -->
-    <script type="text/javascript" src="external_js/jquery.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
