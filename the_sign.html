@@ -19,6 +19,16 @@
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="layout.css" />
 
+	<style type="text/css">
+	.tab-content {
+	    border-left: 1px solid #ddd;
+	    border-right: 1px solid #ddd;
+	    padding: 10px;
+	}
+	.nav-tabs {
+	    margin-bottom: 0;
+	}
+	</style>
 </head>
 
 <body>
@@ -58,7 +68,46 @@
 
 	<!-- CONTENT GOES HERE -->
     <div class="container">
-    	<h1>The Sign</h1>
+    	<div class="row">
+    		<div class="span4">
+    			<div class="tabbable"> <!-- Only required for left/right tabs -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#tab1" data-toggle="tab">Practice</a></li>
+						<li><a href="#tab2" data-toggle="tab">Comments</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+				    	<p>Practice options go here.</p>
+						</div>
+						<div class="tab-pane" id="tab2">
+				    		<p>Comments here!</p>
+						</div>
+					</div>
+				</div>
+    		</div>
+    		<div class="span8">
+    			<div class="row">
+    				<div class="span1">
+	    				<a href="practice.html" class="btn btn-small btn-info vertical-center">
+	    					<i class="icon-white icon-chevron-left"></i>
+	    				</a>
+	    			</div>
+	    			<div class="span6">
+	    				<h2 class="text-center">The Sign</h2>
+	    			</div>
+	    			<div class="span1">
+	    				<div class="btn-group">	    					
+	    					<button class="btn btn-small vertical-center" data-toggle="button">
+	    						<i class="icon-play"></i>
+	    					</button>
+	    					<button class="btn btn-small vertical-center" data-toggle="button">
+	    						<i class="icon-music"></i>
+	    					</button>
+	    				</div>
+	    			</div>
+    			</div>
+    		</div>
+    	</div>
     </div> <!-- /container -->
 
     <!-- Modal -->

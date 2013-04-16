@@ -27,3 +27,17 @@ body {
 .caption {
 	text-align: center;
 }
+
+.text-center {
+	text-align: center;
+}
+
+.vertical-center {
+	top: 18px;
+	position: relative;
+	bottom: 15px;
+}
+
+.margin-left {
+	margin-left: 10px;
+}
