@@ -16,8 +16,15 @@
 	<title>Pitch Perfect</title>
 
 	<!-- Load style sheets -->
-	<link rel="stylesheet" type="text/css" href="layout.css" />
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="layout.css" />
+	<style type="text/css">
+	.span3 {
+		margin-left: 0;
+        padding-left: 19px;
+		border-left:1px solid #eee;
+	}
+	</style>
 
 </head>
 
@@ -61,10 +68,26 @@
     <div class="container">
     	<div class="row">
     		<div class="span12">
-      			<p>director's note here</p>
+    			<div class="well">
+    				<h3>Mr. Director:</h3>
+	      			<p>director's note here</p>
+	      		</div>
       			<div class="row">
-      				<div class="span9">feed here</div>
-      				<div class="span3">recording links here</div>
+      				<div class="span9">
+      					<div class="feed-item">
+      						<p>Ben says: Hooray!</p>
+      					</div>
+      					<div class="feed-item">
+      						<p>Amy says: I'm awesome!</p>
+      					</div>
+      				</div>
+      				<div class="span3">
+      					<ul class="nav nav-tabs">
+      						<li class="active"><a href="#" data-toggle="tab">Hot</a></li>
+      						<li><a href="#" data-toggle="tab">New</a></li>
+      					</ul>
+      					<p>recording links here</p>
+      				</div>
       			</div>
 			</div>
 		</div>
