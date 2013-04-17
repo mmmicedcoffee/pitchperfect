@@ -31,6 +31,20 @@
 	.nav-tabs {
 	    margin-bottom: 0;
 	}
+
+	.ui-slider {
+		margin: 10px 2px;
+		height: 10px;
+	}
+
+    .ui-slider .ui-slider-handle {
+    	margin-top: 2px;
+	    cursor: default;
+	    height: 14px;
+	    position: absolute;
+	    width: 16px;
+	    z-index: 2;
+	}
 	</style>
 
 	<!-- Load js scripts at end of page so pages load faster -->
@@ -39,11 +53,22 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="external_js/vexflow-min.js"></script>
 
-      <script>
-	  $(document).ready(function() {
-	      $("#slider").slider();
-	  });
-	  </script>
+  <script>
+  $(document).ready(function() {
+      $("#tempoSlider").slider({
+      	value:10
+      });
+      $("#myVoicePartSlider").slider({
+      	value:10
+      });
+      $("#otherVoicePartSlider").slider({
+      	value:10
+      });
+      $("#metronomeSlider").slider({
+      	value:10
+      });
+  });
+  </script>
 </head>
 
 <body>
@@ -89,8 +114,14 @@
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab1">
-				    		<p>Practice options go here.</p>
-				    		<div id="slider"></div>
+				    		<p>Tempo:</p>
+				    		<div id="tempoSlider"></div>
+				    		<p>My voice part volume:</p>
+				    		<div id="myVoicePartSlider"></div>
+				    		<p>Other voice part volume:</p>
+				    		<div id="otherVoicePartSlider"></div>
+				    		<p>Metronome tempo:</p>
+				    		<div id="metronomeSlider"></div>
 						</div>
 						<div class="tab-pane" id="tab2">
 				    		<p>Comments here!</p>
