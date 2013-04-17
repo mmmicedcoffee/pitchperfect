@@ -2,14 +2,29 @@ body {
 	padding-top:60px;
 	font-family: "Georgia";
 	font-size: 1.1em;
+	background-color: #FFF8D9;
+}
+
+.navbar-inverse .navbar-inner {
+	background: #A61C00;
+}
+
+.navbar-inverse .nav .active > a {
+	color: #A61C00;
+	background-color: #FFF8D9;
+}
+
+.navbar-inverse .nav > li > a {
+	color: #E6C7D9;	
+}
+
+.page {
+	background-color: white;
+	padding: 25px;
 }
 
 .theme {
-	color: violet;
-}
-
-.thumbnail {
-	background-color: violet;
+	color: #A61C00;
 }
 
 .bold {
@@ -17,7 +32,7 @@ body {
 }
 
 #brand {
-	color: violet;
+	color: white;
 	font-size: 1.5em;
 	font-weight: bold;
 	font-style: italic;
