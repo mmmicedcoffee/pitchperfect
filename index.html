@@ -19,10 +19,15 @@
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="layout.css" />
 	<style type="text/css">
-	.span3 {
-		margin-left: 0;
-        padding-left: 19px;
-		border-left:1px solid #eee;
+	.tab-content {
+		border-left: 1px solid #ddd;
+	    border-right: 1px solid #ddd;
+	    border-bottom: 1px solid #ddd;
+	    padding: 10px;
+	    min-height: 550px;
+	}
+	.nav-tabs {
+	    margin-bottom: 0;
 	}
 	</style>
 
@@ -33,25 +38,21 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-	        	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	            	<span class="icon-bar"></span>
-	            	<span class="icon-bar"></span>
-	            	<span class="icon-bar"></span>
-	          	</button>
-	          	<a id="brand" class="brand" href="#">Pitch Perfect</a>
+	          	<span id="brand" class="brand">Pitch Perfect</span>
 	          	<div class="nav-collapse collapse">
 	            	<ul class="nav pull-left">
-		              	<li><a href="about.html">About</a></li>
-		              	<li><a href="practice.html">Practice</a></li>
-		             	<li><a href="directory.html">People</a></li>
+		              	<li class="active bold"><a href="#">Home</a></li>
+		              	<li class="bold"><a href="practice.html">Practice</a></li>
+		             	<li class="bold"><a href="directory.html">People</a></li>
 	            	</ul>
 	            	<ul class="nav pull-right">
 	            		<li class="dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						    <a href="#" class="dropdown-toggle bold" data-toggle="dropdown">
 						    	<i class="icon-user icon-white"></i> Anna Denkrick <b class="caret"></b>
 						    </a>
 						    <ul class="dropdown-menu">
 						        <li><a tabindex="-1" href="inbox.html">Inbox</a></li>
+						        <li><a tabindex="-1" href="about.html">About</a></li>
 						        <li class="divider"></li>
 						        <li class="disabled"><a tabindex="-1" href="#">Log Out</a></li>
 						    </ul>
@@ -66,29 +67,27 @@
 	<!-- CONTENT GOES HERE -->
     <div class="container">
     	<div class="row">
-    		<div class="span12">
-    			<div class="well">
+    		<div class="tabbable span4">
+      			<ul class="nav nav-tabs">
+      				<li class="active"><a href="#tab1" data-toggle="tab">Hot</a></li>
+      				<li><a href="#tab2" data-toggle="tab">New</a></li>
+      			</ul>
+      			<ul class="tab-content nav nav-pills nav-stacked">
+      				<li><a href="practice.html"> Ben's Recording 1 </a></li>
+      				<li><a href="practice.html"> Pokemon Theme Song </a></li>
+      			</ul>
+      		</div>
+    		<div class="span8">
+    			<div class="well" style="background-color: violet;">
     				<h3>Mr. Director:</h3>
 	      			<p>Hey Fellas, our end-of-semester concert will be here in less than a month! Please check your inbox- I've sent everyone personalized messages for areas of improvement. Looking forward to our next rehearsal. :) </p>
 	      		</div>
-      			<div class="row">
-      				<div class="span9">
-      					<div class="feed-item">
-      						<p>Ben says: So excited for our show! Go Fellas!!!</p>
-      					</div>
-      					<div class="feed-item">
-      						<!-- Fix this link!!!! -->
-      						<p>Amy says: Commented on <a href="practice.html"> Ben's Recording 1 </a>. </p>
-      					</div>
-      				</div>
-      				<div class="span3">
-      					<ul class="nav nav-tabs">
-      						<li class="active"><a href="#" data-toggle="tab">Hot</a></li>
-      						<li><a href="#" data-toggle="tab">New</a></li>
-      					</ul>
-      					<p><a href="practice.html"> Ben's Recording 1 </a></p>
-      					<p><a href="practice.html"> Pokemon Theme Song </a></p>
-      				</div>
+      			<div class="feed-item">
+      				<p>Ben says: So excited for our show! Go Fellas!!!</p>
+      			</div>
+      			<div class="feed-item">
+      				<!-- Fix this link!!!! -->
+      				<p>Amy says: Commented on <a href="practice.html"> Ben's Recording 1 </a>. </p>
       			</div>
 			</div>
 		</div>

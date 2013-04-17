@@ -1,16 +1,32 @@
 body {
 	padding-top:60px;
+	font-family: "Georgia";
+	font-size: 1.1em;
+}
+
+.theme {
+	color: violet;
+}
+
+.thumbnail {
+	background-color: violet;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 #brand {
-	color:white;
+	color: violet;
+	font-size: 1.5em;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .feed-item {
   	min-height: 20px;
-  	padding: 19px;
+  	padding: 20px;
   	margin-bottom: 15px;
-  	margin-right: 20px;
   	border: 1px solid #e3e3e3;
 	-webkit-border-radius: 4px;
     	-moz-border-radius: 4px;
