@@ -33,7 +33,7 @@
 	}
 
 	.ui-slider {
-		margin: 10px 2px;
+		margin: 2px;
 		height: 10px;
 	}
 
@@ -44,6 +44,31 @@
 	    position: absolute;
 	    width: 16px;
 	    z-index: 2;
+	}
+	.control-label {
+		font-size: 0.9em;
+	}
+	legend {
+		text-align: center;
+		font-weight: bold;
+	}
+	.tab-content {
+		min-height:340px;
+	}
+	.practice-header {
+		font-weight: bold;
+		text-align: center;
+		margin: 2px 2px 8px;
+	}
+	#comments {
+		margin-top:10px;
+	  	border: 1px solid #e3e3e3;
+		-webkit-border-radius: 4px;
+	    	-moz-border-radius: 4px;
+	        	border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		      	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 	}
 	</style>
 
@@ -56,16 +81,40 @@
   <script>
   $(document).ready(function() {
       $("#tempoSlider").slider({
-      	value:10
+      	range: "min",
+      	value:$("#tempo").val(),
+      	min:1,
+      	max:180,
+      	slide: function(event,ui) {
+      		$("#tempo").val(ui.value);
+      	}
       });
       $("#myVoicePartSlider").slider({
-      	value:10
+      	range: "min",
+      	value:$("#myVoicePart").val(),
+      	min:1,
+      	max:100,
+      	slide: function(event,ui) {
+      		$("#myVoicePart").val(ui.value);
+      	}
       });
       $("#otherVoicePartSlider").slider({
-      	value:10
+      	range: "min",
+      	value:$("#otherVoicePart").val(),
+      	min:1,
+      	max:100,
+      	slide: function(event,ui) {
+      		$("#otherVoicePart").val(ui.value);
+      	}
       });
       $("#metronomeSlider").slider({
-      	value:10
+      	range: "min",
+      	value:$("#metronome").val(),
+      	min:1,
+      	max:180,
+      	slide: function(event,ui) {
+      		$("#metronome").val(ui.value);
+      	}
       });
   });
   </script>
@@ -110,22 +159,58 @@
     			<div class="tabbable"> <!-- Only required for left/right tabs -->
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#tab1" data-toggle="tab">Practice</a></li>
-						<li><a href="#tab2" data-toggle="tab">Comments</a></li>
+						<li><a href="#tab2" data-toggle="tab">Recordings</a></li>
 					</ul>
 					<div class="tab-content">
+						<!-- FIRST TAB -->						
 						<div class="tab-pane active" id="tab1">
-				    		<p>Tempo:</p>
-				    		<div id="tempoSlider"></div>
-				    		<p>My voice part volume:</p>
-				    		<div id="myVoicePartSlider"></div>
-				    		<p>Other voice part volume:</p>
-				    		<div id="otherVoicePartSlider"></div>
-				    		<p>Metronome tempo:</p>
-				    		<div id="metronomeSlider"></div>
+							<p>
+				    		<form class="form-horizontal">
+				    			<div class="practice-header">Tempo</div>
+				    			<div class="control-group">
+									<label class="control-label" for="tempo">Playback</label>
+								    <div class="controls">
+								    	<input class="input-mini" type="text" id="tempo" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    </div>
+									<div id="tempoSlider"></div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="metronome">Metronome</label>
+								    <div class="controls">
+								    	<input class="input-mini" type="text" id="metronome" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    </div>
+									<div id="metronomeSlider"></div>
+								</div>
+				    			<div class="practice-header">Volume</div>
+								<div class="control-group">
+									<label class="control-label" for="myVoicePart">My Voice Part</label>
+								    <div class="controls">
+								    	<input class="input-mini" type="text" id="myVoicePart" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    </div>
+									<div id="myVoicePartSlider"></div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="otherVoicePart">Other Voice Parts</label>
+								    <div class="controls">
+								    	<input class="input-mini" type="text" id="otherVoicePart" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    </div>
+									<div id="otherVoicePartSlider"></div>
+								</div>
+				    		</form>
+				    		</p>
 						</div>
+						<!-- SECOND TAB -->		
 						<div class="tab-pane" id="tab2">
-				    		<p>Comments here!</p>
+				    		<p>List of recordings go here!</p>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4" id="comments">
+					<legend>Comments</legend>
+					<div class="feed-item mini">
+						Ben thinks you're great!
+					</div>
 					</div>
 				</div>
     		</div>
