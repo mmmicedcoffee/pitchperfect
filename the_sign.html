@@ -116,8 +116,32 @@
       		$("#metronome").val(ui.value);
       	}
       });
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src','images/Ace_of_Base_-_The_Sign.mp3');
+
+        $.get();
+        audioElement.addEventListener("load", function(){
+        },true);
+        $('.play').click(function(){
+        	if (running()){
+				audioElement.currentTime = 2;
+				audioElement.pause();
+        	}
+        	else{
+        		audioElement.play();
+        		audioElement.currentTime = 2;
+        	}
+        });
+        $('.record').click(function(){
+        	audioElement.pause();
+        });
+
+		function running() {
+    		return $('.play').hasClass('active');
+		}
   });
   </script>
+
 </head>
 
 <body>
@@ -225,8 +249,8 @@
 	    				<h2 class="text-center">The Sign</h2>
 	    			</div>
 	    			<div class="span1">
-	    				<div class="btn-group" data-toggle="buttons-checkbox">	    					
-	    					<button class="btn btn-small vertical-center">
+	    				<div class="btn-group" data-toggle="buttons-checkbox">	    				
+	    					<button class="btn btn-small vertical-center play">
 	    						<i class="icon-play"></i>
 	    					</button>
 	    					<button class="btn btn-small vertical-center">
