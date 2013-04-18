@@ -121,3 +121,30 @@ table {
 	background-color: rgb(242, 222, 222);
 	color: rgb(185, 74, 72);
 }
+
+.control-group input { 
+	margin-bottom: 2px;
+	padding: 1px 4px;
+	text-align: right;
+	width: 2em;
+	color: #6FB7E9; 
+	font-weight: bold;
+}
+
+.ui-slider {
+	margin: 2px;
+	height: 10px;
+}
+
+.ui-slider-range {
+	background: #6FB7E9;
+}
+
+.ui-slider .ui-slider-handle {
+	margin-top: 2px;
+    cursor: default;
+    height: 14px;
+    position: absolute;
+    width: 16px;
+    z-index: 2;
+}

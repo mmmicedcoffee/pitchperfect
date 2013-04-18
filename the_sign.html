@@ -32,20 +32,6 @@
 	.nav-tabs {
 	    margin-bottom: 0;
 	}
-
-	.ui-slider {
-		margin: 2px;
-		height: 10px;
-	}
-
-    .ui-slider .ui-slider-handle {
-    	margin-top: 2px;
-	    cursor: default;
-	    height: 14px;
-	    position: absolute;
-	    width: 16px;
-	    z-index: 2;
-	}
 	.control-label {
 		font-size: 0.9em;
 	}
@@ -81,6 +67,7 @@
 
   <script>
   $(document).ready(function() {
+  	  // SLIDER STUFF
       $("#tempoSlider").slider({
       	range: "min",
       	value:$("#tempo").val(),
@@ -117,6 +104,44 @@
       		$("#metronome").val(ui.value);
       	}
       });
+
+        // INPUT STUFF
+        $("#tempo").change(function () {
+        	if (this.value > 180) {
+        		this.value = 180;
+        	} else if (this.value < 0) {
+        		this.value = 0;
+        	}
+		    var value = this.value;
+		    $("#tempoSlider").slider("value", parseInt(value));
+		});
+        $("#metronome").change(function () {
+        	if (this.value > 180) {
+        		this.value = 180;
+        	} else if (this.value < 0) {
+        		this.value = 0;
+        	}
+		    var value = this.value;
+		    $("#metronomeSlider").slider("value", parseInt(value));
+		});
+        $("#myVoicePart").change(function () {
+        	if (this.value > 100) {
+        		this.value = 100;
+        	} else if (this.value < 0) {
+        		this.value = 0;
+        	}
+		    var value = this.value;
+		    $("#myVoicePartSlider").slider("value", parseInt(value));
+		});
+        $("#otherVoicePart").change(function () {
+        	if (this.value > 100) {
+        		this.value = 100;
+        	} else if (this.value < 0) {
+        		this.value = 0;
+        	}
+		    var value = this.value;
+		    $("#otherVoicePartSlider").slider("value", parseInt(value));
+		});
   });
   </script>
 </head>
@@ -171,14 +196,14 @@
 				    			<div class="control-group">
 									<label class="control-label" for="tempo">Playback</label>
 								    <div class="controls">
-								    	<input class="input-mini" type="text" id="tempo" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    	<input class="input-mini" type="text" id="tempo" value="20" />
 								    </div>
 									<div id="tempoSlider"></div>
 								</div>
 								<div class="control-group">
 									<label class="control-label" for="metronome">Metronome</label>
 								    <div class="controls">
-								    	<input class="input-mini" type="text" id="metronome" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    	<input class="input-mini" type="text" id="metronome" value="20" />
 								    </div>
 									<div id="metronomeSlider"></div>
 								</div>
@@ -186,14 +211,14 @@
 								<div class="control-group">
 									<label class="control-label" for="myVoicePart">My Voice Part</label>
 								    <div class="controls">
-								    	<input class="input-mini" type="text" id="myVoicePart" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    	<input class="input-mini" type="text" id="myVoicePart" value="20" />
 								    </div>
 									<div id="myVoicePartSlider"></div>
 								</div>
 								<div class="control-group">
 									<label class="control-label" for="otherVoicePart">Other Voice Parts</label>
 								    <div class="controls">
-								    	<input class="input-mini" type="text" id="otherVoicePart" value="20" style="border: 0; color: #f6931f; font-weight: bold;" />
+								    	<input class="input-mini" type="text" id="otherVoicePart" value="20" />
 								    </div>
 									<div id="otherVoicePartSlider"></div>
 								</div>
