@@ -19,6 +19,21 @@
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="layout.css" />
 
+	<style>
+	.page-header{
+		height: 120px;
+		position:relative;
+	}
+	.vertical-align-bot {
+		position: absolute;
+		bottom: 0;
+	}
+	.push-down {
+		position: absolute;
+		top:70px;
+	}
+	</style>
+
 </head>
 
 <body>
@@ -54,11 +69,26 @@
 
 	<!-- CONTENT GOES HERE -->
     <div class="container page">
-    	<div class="page-header">
-    		Ben's icon & his name
+    	<!-- TOP PART -->
+    	<div class="page-header"> 
+    		<div class="span1">
+				<span class="push-down"><a href="directory.html" class="btn btn-small btn-info vertical-center">
+					<i class="icon-white icon-chevron-left"></i>
+				</a></span>
+			</div>
+	        <div class="span2"><img src="images/BenBitdiddle.jpg" width="120" height="120" alt="" style="border:1px solid #000"/></div> 
+	        <div class="span7"><h1 class="vertical-align-bot" style="display:inline;">Ben Bitdiddle <small>TENOR</small></h1></div> 
     	</div>
+    	<!-- FUN STUFF -->
     	<div class="row">
-
+	    	<!-- AVAILABILITY -->
+	    	<div class="span8">
+	    		I'm available!
+	    	</div>
+	    	<!-- REPETOIRE -->
+	    	<div class="span4">
+	    		I sing songs!
+	    	</div>
 		</div>
     </div> <!-- /container -->
 
