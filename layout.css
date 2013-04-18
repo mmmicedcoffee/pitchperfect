@@ -95,3 +95,29 @@ body {
 .back-button {
 	float:left;
 }
+
+table {
+	width:100%;
+}
+
+#availability {
+	table-layout: fixed; 
+}
+
+#availability td {
+	line-height: 1.3em;
+	font-size: 1.3em;
+	text-align: center;
+	border: 1px solid #fff;
+	height: 100px;
+}
+
+.avail {
+	background-color: rgb(223, 240, 216);
+	color: rgb(70, 136, 71);
+}
+
+.not-avail {
+	background-color: rgb(242, 222, 222);
+	color: rgb(185, 74, 72);
+}

@@ -56,6 +56,7 @@
 						    </a>
 						    <ul class="dropdown-menu">
 						        <li><a tabindex="-1" href="inbox.html">Inbox</a></li>
+						        <li><a tabindex="-1" href="denkrick.html">Profile</a></li>
 						        <li><a tabindex="-1" href="about.html">About</a></li>
 						        <li class="divider"></li>
 						        <li class="disabled"><a tabindex="-1" href="#">Log Out</a></li>
@@ -84,15 +85,69 @@
     	<div class="row">
 	    	<!-- AVAILABILITY -->
 	    	<div class="span8">
-	    		I'm available!
+				<legend>Availability</legend>
+				<table id="availability">
+					<thead>
+						<tr>
+							<th>Sun</th>
+							<th>Mon</th>
+							<th>Tue</th>
+							<th>Wed</th>
+							<th>Thu</th>
+							<th>Fri</th>
+							<th>Sat</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="avail">3-10pm</td>
+							<td class="not-avail"></td>
+							<td class="avail">3-5pm</td>
+							<td class="avail">7-10pm</td>
+							<td class="not-avail"></td>
+							<td class="not-avail"></td>
+							<td class="avail">1-5pm<br>7-10pm</td>
+						</tr>
+					</tbody>
+				</table>
 	    	</div>
 	    	<!-- REPETOIRE -->
 	    	<div class="span4">
-	    		I sing songs!
+				<legend>Repertoire</legend>
+	    		<table id="repertoire">
+	    			<tbody>
+	    				<tr>
+	    					<td><a href="#notImplementedYetModal">Gangnam Style</a></td>
+	    					<td>Solo</td>
+	    				</tr>
+	    				<tr>
+	    					<td><a href="#notImplementedYetModal">Pokemon Theme Song</a></td>
+	    					<td>Tenor 1</td>
+	    				</tr>
+	    				<tr>
+	    					<td><a href="the_sign.html">The Sign</a></td>
+	    					<td>Percussion</td>
+	    				</tr>
+	    			</tbody>
+	    		</table>
 	    	</div>
 		</div>
     </div> <!-- /container -->
 
+
+    <!-- Modal -->
+	<div id="notImplementedYetModal" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+	    	<button type="button" class="close" data-dismiss="modal">×</button>
+	    	<h3>Oops!</h3>
+		</div>
+		<div class="modal-body">
+	    	<p>This feature has not been implemented yet.  Please try again later!</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal">Close</button>
+		</div>
+	</div>
 
     <!-- Load js scripts at end of page so pages load faster -->
     <script type="text/javascript" src="external_js/jquery.js"></script>
