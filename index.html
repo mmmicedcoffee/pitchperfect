@@ -29,6 +29,16 @@
 	.nav-tabs {
 	    margin-bottom: 0;
 	}
+	#calendar {
+		margin-top:10px;
+	  	border: 1px solid #e3e3e3;
+		-webkit-border-radius: 4px;
+	    	-moz-border-radius: 4px;
+	        	border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		      	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	}
 	</style>
 
 </head>
@@ -68,20 +78,35 @@
 	<!-- CONTENT GOES HERE -->
     <div class="container page">
     	<div class="row">
-    		<div class="tabbable span4">
-      			<ul class="nav nav-tabs">
-      				<li class="active"><a href="#tab1" data-toggle="tab">Hot</a></li>
-      				<li><a href="#tab2" data-toggle="tab">New</a></li>
-      			</ul>
-      			<ul class="tab-content nav nav-pills nav-stacked">
-      				<li><a href="practice.html"> Ben's Recording 1 </a></li>
-      				<li><a href="practice.html"> Pokemon Theme Song </a></li>
-      			</ul>
-      		</div>
+    		<div class="span4">
+				<div d="calendar">
+					<legend>Upcoming Events</legend>
+					<div class="feed-item mini">
+						<font style= "color:#2554C7">4/23 </font> Rehearsal, 4:00PM<br>
+						<font style= "color:#2554C7">4/25 </font>Rehearsal, 4:00PM<br>
+						<font style= "color:#2554C7">4/26 </font> One-on-One's with the Director <br>
+						<font style= "color:#2554C7">4/30 </font>Rehearsal, 4:00PM<br>
+						<font style= "color:#2554C7">5/02 </font>Rehearsal, 4:00PM<br>
+						<font style= "color:#2554C7">5/03 </font> Concert dryrun, 7:00PM<br>
+						<font style= "color:#2554C7">5/10 </font> The Fella's Annual Concert! <br>
+					</div>
+				</div>
+				<div class="tabbable">
+					<legend>Recordings</legend>
+      				<ul class="nav nav-tabs">
+      					<li class="active"><a href="#tab1" data-toggle="tab">Hot</a></li>
+      					<li><a href="#tab2" data-toggle="tab">New</a></li>
+      				</ul>
+      				<ul class="tab-content nav nav-pills nav-stacked">
+      					<li><a href="practice.html"> Ben's Recording 1 </a></li>
+      					<li><a href="practice.html"> Pokemon Theme Song </a></li>
+      				</ul>
+      			</div>
+			</div>
     		<div class="span8">
     			<div class="well">
     				<h3>Mr. Director:</h3>
-	      			<p>Hey Fellas, our end-of-semester concert will be here in less than a month! Please check your inbox- I've sent everyone personalized messages for areas of improvement. Looking forward to our next rehearsal. :) </p>
+	      			<p>Hey Fellas, our end-of-semester concert will be here in less than a month! Don't forget that we have one-on-one meetings next week so that I can give you all personalized feedback. Looking forward to our next rehearsal. :) </p>
 	      		</div>
       			<div class="feed-item">
       				<p>Ben says: So excited for our show! Go Fellas!!!</p>
@@ -91,7 +116,8 @@
       				<p>Amy says: Commented on <a href="practice.html"> Ben's Recording 1 </a>. </p>
       			</div>
 			</div>
-		</div>
+      	</div>
+      		
     </div> <!-- /container -->
 
 
