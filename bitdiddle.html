@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Pitch Perfect (GR4)
+
+	Ge (Jackie) Chen
+	Irene Chen
+	Jiashan (Susan) Liang
+
+	TA: Chong-U Lim
+-->
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pitch Perfect</title>
+
+	<!-- Load style sheets -->
+    <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="layout.css" />
+
+	<style>
+	.page-header{
+		height: 120px;
+		position:relative;
+	}
+	.vertical-align-bot {
+		position: absolute;
+		bottom: 0;
+	}
+	.push-down {
+		position: absolute;
+		top:70px;
+	}
+	</style>
+
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+	          	<span id="brand" class="brand">Pitch Perfect</span>
+	          	<div class="nav-collapse collapse">
+	            	<ul class="nav pull-left">
+		              	<li class="bold"><a href="index.html">Home</a></li>
+		              	<li class="bold"><a href="practice.html">Practice</a></li>
+		             	<li class="active bold"><a href="directory.html">People</a></li>
+	            	</ul>
+	            	<ul class="nav pull-right">
+	            		<li class="dropdown">
+						    <a href="#" class="dropdown-toggle bold" data-toggle="dropdown">
+						    	<i class="icon-user icon-white"></i> Anna Denkrick <b class="caret"></b>
+						    </a>
+						    <ul class="dropdown-menu">
+						        <li><a tabindex="-1" href="inbox.html">Inbox</a></li>
+						        <li><a tabindex="-1" href="about.html">About</a></li>
+						        <li class="divider"></li>
+						        <li class="disabled"><a tabindex="-1" href="#">Log Out</a></li>
+						    </ul>
+					  	</li>
+	            	</ul>
+	          	</div> <!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+
+	<!-- CONTENT GOES HERE -->
+    <div class="container page">
+    	<!-- TOP PART -->
+    	<div class="page-header"> 
+    		<div class="span1">
+				<span class="push-down"><a href="directory.html" class="btn btn-small btn-info vertical-center">
+					<i class="icon-white icon-chevron-left"></i>
+				</a></span>
+			</div>
+	        <div class="span2"><img src="images/BenBitdiddle.jpg" width="120" height="120" alt="" style="border:1px solid #000"/></div> 
+	        <div class="span7"><h1 class="vertical-align-bot" style="display:inline;">Ben Bitdiddle <small>TENOR</small></h1></div> 
+    	</div>
+    	<!-- FUN STUFF -->
+    	<div class="row">
+	    	<!-- AVAILABILITY -->
+	    	<div class="span8">
+	    		I'm available!
+	    	</div>
+	    	<!-- REPETOIRE -->
+	    	<div class="span4">
+	    		I sing songs!
+	    	</div>
+		</div>
+    </div> <!-- /container -->
+
+
+    <!-- Load js scripts at end of page so pages load faster -->
+    <script type="text/javascript" src="external_js/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
