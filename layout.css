@@ -1,6 +1,6 @@
 body {
-	padding: 60px;
-	font-family: "Book Antiqua", serif;
+	padding-top: 60px;
+	font-family: "Georgia", serif;
 	background-color: #E9F2F9;
 }
 
@@ -45,12 +45,11 @@ body {
 
 .bold {
 	font-weight: bold;
-	font-size: 1.15em;
+	font-size: 1.2em;
 }
 
 #brand {
 	color: white;
-	font-family: "Georgia", serif;
 	font-size: 1.5em;
 	font-weight: bold;
 	font-style: italic;
@@ -75,10 +74,6 @@ body {
 	font-size: 11pt;
 }
 
-.bottom-buffer {
-	margin-bottom: 20px;
-}
-
 .caption {
 	text-align: center;
 }
@@ -99,4 +94,57 @@ body {
 
 .back-button {
 	float:left;
+}
+
+table {
+	width:100%;
+}
+
+#availability {
+	table-layout: fixed; 
+}
+
+#availability td {
+	line-height: 1.3em;
+	font-size: 1.3em;
+	text-align: center;
+	border: 1px solid #fff;
+	height: 100px;
+}
+
+.avail {
+	background-color: rgb(223, 240, 216);
+	color: rgb(70, 136, 71);
+}
+
+.not-avail {
+	background-color: rgb(242, 222, 222);
+	color: rgb(185, 74, 72);
+}
+
+.control-group input { 
+	margin-bottom: 2px;
+	padding: 1px 4px;
+	text-align: right;
+	width: 2em;
+	color: #6FB7E9; 
+	font-weight: bold;
+}
+
+.ui-slider {
+	margin: 2px;
+	height: 10px;
+}
+
+.ui-slider-range {
+	background: #6FB7E9;
+}
+
+.ui-slider .ui-slider-handle {
+	margin-top: 2px;
+    cursor: default;
+    height: 14px;
+    position: absolute;
+    width: 16px;
+    z-index: 2;
 }
