@@ -69,6 +69,8 @@ body {
 }
 
 .mini {
+	border-left: 0px;
+	border-right: 0px;
 	margin-right: 5px;
 	margin-left: 5px;
 	font-size: 11pt;
@@ -155,4 +157,19 @@ table {
 	font-size: 0.9em;
 	font-style: italic;
 	color: #555;
+}
+
+.date-text {
+	text-align: right;
+	font-size: 0.9em;
+	color: #555;
+}
+
+.header-row {
+	text-align: center;
+}
+
+.header-row td {
+	padding: 10px 0px;
+	font-weight: bold;
 }

@@ -254,13 +254,16 @@
 							<p><span class="help-text">Make a new recording by pressing the <i class="icon-record record-color"></i> button!</span></p>
 				    		<table>
 				    			<tbody>
+				    				<tr class="header-row">
+				    					<td colspan="3">My Recordings</td>
+				    				</tr>
 				    				<tr>
 				    					<td>	    		
 					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
 					    						<i class="icon-play play-color"></i>
 						    				</a>
 					    				</td>
-				    					<td>First Try</td>
+				    					<td>Anna - First Try</td>
 				    					<td>4/01</td>
 				    				</tr>
 				    					<td>	    		
@@ -268,7 +271,7 @@
 					    						<i class="icon-play play-color"></i>
 						    				</button>
 				    					</td>
-				    					<td>Second Try</td>
+				    					<td>Anna - Second Try</td>
 				    					<td>4/14</td>
 				    				<tr>
 				    					<td>	    		
@@ -276,7 +279,19 @@
 					    						<i class="icon-play play-color"></i>
 						    				</button>
 					    				</td>
-				    					<td>Best one yet! ...I think?</td>
+				    					<td>Anna - Best one! ...I think?</td>
+				    					<td>4/16</td>
+				    				</tr>
+				    				<tr class="header-row">
+				    					<td colspan="3">Recordings by Others</td>
+				    				</tr>
+				    				<tr>
+				    					<td>	    		
+					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
+					    						<i class="icon-play play-color"></i>
+						    				</button>
+					    				</td>
+				    					<td>Ben Recording 1</td>
 				    					<td>4/16</td>
 				    				</tr>
 				    			</tbody>
@@ -286,10 +301,27 @@
 				</div>
 				<div class="row">
 					<div class="span4" id="comments">
-					<legend>Comments</legend>
-					<div class="feed-item mini">
-						Ben thinks you're great!
-					</div>
+						<legend>Comments</legend>
+						<div class="feed-item mini">
+							<b>Ben:</b> Anna sounds great!<br>
+							<div class="date-text">General Comment - 4/16</div>
+						</div>
+						<p>
+							<div class="add-comment">
+								<select style="width:97%;margin-left:4px">
+									<option value="" disabled selected>Select a recording to comment on:</option>
+									<option>General Comment</option>
+									<option>Anna - First Try</option>
+									<option>Anna - Second Try</option>
+									<option>Anna - Best one! ...I think?</option>
+									<option>Ben Recording 1</option>
+								</select>
+								<div class="input-append">
+									<input class="span2" id="appendedInputButton" type="text" placeholder="Write a comment!" style="width:98%;margin-left:4px">
+									<button class="btn" type="button" data-target="#notImplementedYetModal" data-toggle="modal">Send</button>
+								</div>
+							</div>
+						</p>
 					</div>
 				</div>
     		</div>
