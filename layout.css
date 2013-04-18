@@ -1,6 +1,6 @@
 body {
-	padding: 60px;
-	font-family: "Book Antiqua", serif;
+	padding-top: 60px;
+	font-family: "Georgia", serif;
 	background-color: #E9F2F9;
 }
 
@@ -45,12 +45,11 @@ body {
 
 .bold {
 	font-weight: bold;
-	font-size: 1.15em;
+	font-size: 1.2em;
 }
 
 #brand {
 	color: white;
-	font-family: "Georgia", serif;
 	font-size: 1.5em;
 	font-weight: bold;
 	font-style: italic;
@@ -73,10 +72,6 @@ body {
 	margin-right: 5px;
 	margin-left: 5px;
 	font-size: 11pt;
-}
-
-.bottom-buffer {
-	margin-bottom: 20px;
 }
 
 .caption {
