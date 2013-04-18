@@ -20,21 +20,6 @@
     <link rel="stylesheet" type="text/css" href="whhg-font/css/whhg.css" />
 	<link rel="stylesheet" type="text/css" href="layout.css" />
 
-	<style>
-	.page-header{
-		height: 120px;
-		position:relative;
-	}
-	.vertical-align-bot {
-		position: absolute;
-		bottom: 0;
-	}
-	.push-down {
-		position: absolute;
-		top:70px;
-	}
-	</style>
-
 </head>
 
 <body>
@@ -56,7 +41,7 @@
 						    </a>
 						    <ul class="dropdown-menu">
 						        <li><a tabindex="-1" href="inbox.html">Inbox</a></li>
-						        <li><a tabindex="-1" href="denkrick.html">Profile</a></li>
+						        <li><a tabindex="-1" href="#">Profile</a></li>
 						        <li><a tabindex="-1" href="about.html">About</a></li>
 						        <li class="divider"></li>
 						        <li class="disabled"><a tabindex="-1" href="#">Log Out</a></li>
@@ -72,14 +57,14 @@
 	<!-- CONTENT GOES HERE -->
     <div class="container page">
     	<!-- TOP PART -->
-    	<div class="page-header"> 
+    	<div class="container" style="margin-bottom: 30px;">
     		<div class="span1">
-				<span class="push-down"><a href="directory.html" class="btn btn-small btn-info vertical-center">
+				<span><a href="directory.html" class="btn btn-small btn-info vertical-center">
 					<i class="icon-white icon-chevron-left"></i>
 				</a></span>
 			</div>
-	        <div class="span2"><img src="images/AnnaDenkrick.jpg" width="120" height="120" alt="" style="border:1px solid #000"/></div> 
-	        <div class="span7"><h1 class="vertical-align-bot" style="display:inline;">Anna Denkrick <small>ALTO</small></h1></div> 
+	        <div class="span1 offset2"><img src="images/AnnaDenkrick.jpg" width="50" height="50" alt="" style="border:1px solid #000; margin-top: 15px;" class="img-polaroid"/></div>
+	        <div class="span7 theme"><h1 style="padding-top: 20px; display:block;">Anna Denkrick<small style="margin-left: 20px;">ALTO</small></h1></div> 
     	</div>
     	<!-- FUN STUFF -->
     	<div class="row">
@@ -100,13 +85,13 @@
 					</thead>
 					<tbody>
 						<tr>
+							<td class="avail">3-10pm</td>
 							<td class="not-avail"></td>
+							<td class="avail">3-5pm</td>
 							<td class="avail">7-10pm</td>
-							<td class="avail">7-10pm</td>
-							<td class="avail">10-11am<br>7-10pm</td>
 							<td class="not-avail"></td>
 							<td class="not-avail"></td>
-							<td class="not-avail"></td>
+							<td class="avail">1-5pm<br>7-10pm</td>
 						</tr>
 					</tbody>
 				</table>
@@ -117,12 +102,12 @@
 	    		<table id="repertoire">
 	    			<tbody>
 	    				<tr>
-	    					<td><a href="#notImplementedYetModal">Pokemon Theme Song</a></td>
+	    					<td><a href="#notImplementedYetModal" data-toggle="modal">Pokemon Theme Song</a></td>
 	    					<td>Alto 1</td>
 	    				</tr>
 	    				<tr>
 	    					<td><a href="the_sign.html">The Sign</a></td>
-	    					<td>Solo</td>
+	    					<td>Percussion</td>
 	    				</tr>
 	    			</tbody>
 	    		</table>

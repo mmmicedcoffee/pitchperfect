@@ -20,21 +20,6 @@
     <link rel="stylesheet" type="text/css" href="whhg-font/css/whhg.css" />
 	<link rel="stylesheet" type="text/css" href="layout.css" />
 
-	<style>
-	.page-header{
-		height: 120px;
-		position:relative;
-	}
-	.vertical-align-bot {
-		position: absolute;
-		bottom: 0;
-	}
-	.push-down {
-		position: absolute;
-		top:70px;
-	}
-	</style>
-
 </head>
 
 <body>
@@ -72,14 +57,14 @@
 	<!-- CONTENT GOES HERE -->
     <div class="container page">
     	<!-- TOP PART -->
-    	<div class="page-header"> 
+    	<div class="container" style="margin-bottom: 30px;">
     		<div class="span1">
-				<span class="push-down"><a href="directory.html" class="btn btn-small btn-info vertical-center">
+				<span><a href="directory.html" class="btn btn-small btn-info vertical-center">
 					<i class="icon-white icon-chevron-left"></i>
 				</a></span>
 			</div>
-	        <div class="span2"><img src="images/BenBitdiddle.jpg" width="120" height="120" alt="" style="border:1px solid #000"/></div> 
-	        <div class="span7"><h1 class="vertical-align-bot" style="display:inline;">Ben Bitdiddle <small>TENOR</small></h1></div> 
+	        <div class="span1 offset2"><img src="images/BenBitdiddle.jpg" width="50" height="50" alt="" style="border:1px solid #000; margin-top: 15px;" class="img-polaroid"/></div>
+	        <div class="span7 theme"><h1 style="padding-top: 20px; display:block;">Ben Bitdiddle<small style="margin-left: 20px;">TENOR</small></h1></div> 
     	</div>
     	<!-- FUN STUFF -->
     	<div class="row">
@@ -117,11 +102,11 @@
 	    		<table id="repertoire">
 	    			<tbody>
 	    				<tr>
-	    					<td><a href="#notImplementedYetModal">Gangnam Style</a></td>
+	    					<td><a href="#notImplementedYetModal" data-toggle="modal">Gangnam Style</a></td>
 	    					<td>Solo</td>
 	    				</tr>
 	    				<tr>
-	    					<td><a href="#notImplementedYetModal">Pokemon Theme Song</a></td>
+	    					<td><a href="#notImplementedYetModal" data-toggle="modal">Pokemon Theme Song</a></td>
 	    					<td>Tenor 1</td>
 	    				</tr>
 	    				<tr>
