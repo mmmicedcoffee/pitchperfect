@@ -166,6 +166,22 @@
 		    var value = this.value;
 		    $("#otherVoicePartSlider").slider("value", parseInt(value));
 		});
+
+		<!-- FILTER RECORDINGS -->
+		$('#filter').keyup(function() {
+			var a = $(this).val();
+			if (a.length > 0) {
+				children = ($("#accordion1").children());
+				var containing = children.filter(function() {
+					var regex = new RegExp('\\b'+a, 'i');
+					return regex.test($('a', this).text());
+				}).slideDown();
+				children.not(containing).slideUp();
+			} else {
+				children.slideDown();
+			}
+			return false;
+		});
   });
   </script>
 
@@ -329,8 +345,9 @@
     		<div class="span3">
     			<div class="row-fluid">
 					<div class="span12" id="comments">
-						<legend style="margin-bottom:0;">My Recordings</legend>
-						<div class="accordion" id="accordion1" style="height:200px;overflow:auto;margin:0;">
+						<legend>Recordings</legend>
+						<input type="text" placeholder="Search Recordings" id="filter">
+						<div class="accordion" id="accordion1" style="height:400px;overflow:auto;">
 							<div class="accordion-group">
 								<div class="accordion-heading">
 									<div class="row-fluid">
@@ -387,7 +404,7 @@
 					    					<i class="icon-play play-color"></i>
 						    			</button></div>
 						    			<div class="span9">
-										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">Anna - Third Try</a>
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">Ben - Tenor Recording</a>
 										</div>
 										<div class="span2">
 											<p style="margin:7px;">4/16</p>
@@ -397,60 +414,8 @@
 								<div id="collapseThree" class="accordion-body collapse">
 									<div class="accordion-inner">
 										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
-											[4/16] <a href="bitdiddle.html">Ben</a>: Anna sounds great!
-										</div>
-										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row-fluid">
-					<div class="span12" id="comments">
-						<legend style="margin-bottom:0;">Recordings by Others</legend>
-						<div class="accordion" id="accordion2" style="height:200px;overflow:auto;">
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<div class="row-fluid">
-										<div class="span1">
-										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
-					    					<i class="icon-play play-color"></i>
-						    			</button></div>
-						    			<div class="span9">
-										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">Ben - First Try</a>
-										</div>
-										<div class="span2">
-											<p style="margin:7px;">4/01</p>
-										</div>
-									</div>
-								</div>
-								<div id="collapse1" class="accordion-body collapse">
-									<div class="accordion-inner">
-										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
 											[4/16] <a href="denkrick.html">Anna</a>: Ben sounds great!
 										</div>
-										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
-									</div>
-								</div>
-							</div>
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<div class="row-fluid">
-										<div class="span1">
-										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
-					    					<i class="icon-play play-color"></i>
-						    			</button></div>
-						    			<div class="span9">
-										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">Ben - Second Try</a>
-										</div>
-										<div class="span2">
-											<p style="margin:7px;">4/14</p>
-										</div>
-									</div>
-								</div>
-								<div id="collapse2" class="accordion-body collapse">
-									<div class="accordion-inner">
 										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
 									</div>
 								</div>

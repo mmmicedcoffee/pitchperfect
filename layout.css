@@ -174,3 +174,9 @@ table {
 	padding: 10px 0px;
 	font-weight: bold;
 }
+
+#filter {
+	width: 240px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
