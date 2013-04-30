@@ -49,6 +49,7 @@
 	}
 	#comments {
 		margin-top:10px;
+		margin-bottom: 10px;
 	  	border: 1px solid #e3e3e3;
 		-webkit-border-radius: 4px;
 	    	-moz-border-radius: 4px;
@@ -174,7 +175,7 @@
 	<!-- NAVBAR -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container-fluid">
 	          	<span id="brand" class="brand">Pitch Perfect</span>
 	          	<div class="nav-collapse collapse">
 	            	<ul class="nav pull-left">
@@ -203,18 +204,12 @@
 
 
 	<!-- CONTENT GOES HERE -->
-    <div class="container page">
-    	<div class="row">
-    		<div class="span4">
-    			<div class="tabbable"> <!-- Only required for left/right tabs -->
-					<ul class="nav nav-tabs">
-						<li class="active"><a href="#tab1" data-toggle="tab">Practice</a></li>
-						<li><a href="#tab2" data-toggle="tab">Recordings</a></li>
-					</ul>
-					<div class="tab-content">
-						<!-- FIRST TAB -->						
-						<div class="tab-pane active" id="tab1">
-							<p>
+    <div class="container-fluid page">
+    	<div class="row-fluid">
+    		<div class="span3">
+    			<div class="row-fluid">
+					<div class="span12" id="comments">
+						<legend>Play Options</legend>
 				    		<form class="form-horizontal">
 				    			<div class="practice-header">Tempo</div>
 				    			<div class="control-group">
@@ -247,92 +242,17 @@
 									<div id="otherVoicePartSlider"></div>
 								</div>
 				    		</form>
-				    		</p>
-						</div>
-						<!-- SECOND TAB -->		
-						<div class="tab-pane" id="tab2">
-							<p><span class="help-text">Make a new recording by pressing the <i class="icon-record record-color"></i> button!</span></p>
-				    		<table>
-				    			<tbody>
-				    				<tr class="header-row">
-				    					<td colspan="3">My Recordings</td>
-				    				</tr>
-				    				<tr>
-				    					<td>	    		
-					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
-					    						<i class="icon-play play-color"></i>
-						    				</a>
-					    				</td>
-				    					<td>Anna - First Try</td>
-				    					<td>4/01</td>
-				    				</tr>
-				    					<td>	    		
-					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
-					    						<i class="icon-play play-color"></i>
-						    				</button>
-				    					</td>
-				    					<td>Anna - Second Try</td>
-				    					<td>4/14</td>
-				    				<tr>
-				    					<td>	    		
-					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
-					    						<i class="icon-play play-color"></i>
-						    				</button>
-					    				</td>
-				    					<td>Anna - Best one! ...I think?</td>
-				    					<td>4/16</td>
-				    				</tr>
-				    				<tr class="header-row">
-				    					<td colspan="3">Recordings by Others</td>
-				    				</tr>
-				    				<tr>
-				    					<td>	    		
-					    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini">
-					    						<i class="icon-play play-color"></i>
-						    				</button>
-					    				</td>
-				    					<td>Ben Recording 1</td>
-				    					<td>4/16</td>
-				    				</tr>
-				    			</tbody>
-				    		</table>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span4" id="comments">
-						<legend>Comments</legend>
-						<div class="feed-item mini">
-							<b>Ben:</b> Anna sounds great!<br>
-							<div class="date-text">General Comment - 4/16</div>
-						</div>
-						<p>
-							<div class="add-comment">
-								<select style="width:97%;margin-left:4px">
-									<option value="" disabled selected>Select a recording to comment on:</option>
-									<option>General Comment</option>
-									<option>Anna - First Try</option>
-									<option>Anna - Second Try</option>
-									<option>Anna - Best one! ...I think?</option>
-									<option>Ben Recording 1</option>
-								</select>
-								<div class="input-append">
-									<input class="span2" id="appendedInputButton" type="text" placeholder="Write a comment!" style="width:98%;margin-left:4px">
-									<button class="btn" type="button" data-target="#notImplementedYetModal" data-toggle="modal">Send</button>
-								</div>
-							</div>
-						</p>
 					</div>
 				</div>
     		</div>
-    		<div class="span8">
-    			<div class="row">
+    		<div class="span6">
+    			<div class="row-fluid">
     				<div class="span1">
 	    				<a href="practice.html" class="btn btn-small btn-info">
 	    					<i class="icon-white icon-chevron-left"></i>
 	    				</a>
 	    			</div>
-	    			<div class="span6">
+	    			<div class="span10">
 	    				<h2 class="text-center">The Sign</h2>
 	    			</div>
 	    			<div class="span1">
@@ -346,8 +266,8 @@
 	    				</div>
 	    			</div>
     			</div> <!-- /row -->
-    			<div class="row">
-    				<div class="span8">
+    			<div class="row-fluid">
+    				<div class="span12">
 	    				<canvas width="640" height="200"></canvas>
 	    				<p>
 							<script>
@@ -398,6 +318,142 @@
 						</p>
 					</div>
     			</div>
+    		</div>
+    		<div class="span3">
+    			<div class="row-fluid">
+					<div class="span12" id="comments">
+						<legend style="margin-bottom:0;">My Recordings</legend>
+						<div class="accordion" id="accordion1" style="height:200px;overflow:auto;margin:0;">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="row-fluid">
+										<div class="span1">
+										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
+					    					<i class="icon-play play-color"></i>
+						    			</button></div>
+						    			<div class="span9">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">Anna - First Try</a>
+										</div>
+										<div class="span2">
+											<p style="margin:7px;">4/01</p>
+										</div>
+									</div>
+								</div>
+								<div id="collapseOne" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
+											[4/16] <b>Ben:</b> Anna sounds great!
+										</div>
+										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="row-fluid">
+										<div class="span1">
+										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
+					    					<i class="icon-play play-color"></i>
+						    			</button></div>
+						    			<div class="span9">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Anna - Second Try</a>
+										</div>
+										<div class="span2">
+											<p style="margin:7px;">4/14</p>
+										</div>
+									</div>
+								</div>
+								<div id="collapseTwo" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
+											[4/16] <b>Ben:</b> Anna sounds great!
+										</div>
+										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="row-fluid">
+										<div class="span1">
+										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
+					    					<i class="icon-play play-color"></i>
+						    			</button></div>
+						    			<div class="span9">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">Anna - Third Try</a>
+										</div>
+										<div class="span2">
+											<p style="margin:7px;">4/16</p>
+										</div>
+									</div>
+								</div>
+								<div id="collapseThree" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
+											[4/16] <b>Ben:</b> Anna sounds great!
+										</div>
+										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12" id="comments">
+						<legend style="margin-bottom:0;">Recordings by Others</legend>
+						<div class="accordion" id="accordion2" style="height:200px;overflow:auto;">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="row-fluid">
+										<div class="span1">
+										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
+					    					<i class="icon-play play-color"></i>
+						    			</button></div>
+						    			<div class="span9">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">Ben - First Try</a>
+										</div>
+										<div class="span2">
+											<p style="margin:7px;">4/01</p>
+										</div>
+									</div>
+								</div>
+								<div id="collapse1" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
+											[4/16] <b>Anna:</b> Ben sounds great!
+										</div>
+										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<div class="row-fluid">
+										<div class="span1">
+										<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-mini" style="margin:7px;">
+					    					<i class="icon-play play-color"></i>
+						    			</button></div>
+						    			<div class="span9">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">Ben - Second Try</a>
+										</div>
+										<div class="span2">
+											<p style="margin:7px;">4/14</p>
+										</div>
+									</div>
+								</div>
+								<div id="collapse2" class="accordion-body collapse">
+									<div class="accordion-inner">
+										<div style="padding: 5px; border-bottom:1px solid #e3e3e3;">
+											[4/16] <b>Anna:</b> Ben sounds great!
+										</div>
+										<input placeholder="Write a comment..." style="width:95%; margin:5px;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
     		</div>
     	</div>
     </div> <!-- /container -->

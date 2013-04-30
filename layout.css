@@ -1,4 +1,5 @@
 body {
+	padding: 20px;
 	padding-top: 60px;
 	font-family: "Georgia", serif;
 	background-color: #E9F2F9;
@@ -29,7 +30,7 @@ body {
 
 .page {
 	background-color: white;
-	padding: 25px;
+	padding: 20px;
 	border: 1px solid #6FB7E9;
 	-webkit-border-radius: 6px;
     	-moz-border-radius: 6px;
