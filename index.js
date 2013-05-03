@@ -11,4 +11,20 @@ $(function() {
 			$(this).val('');
 		}
 	});
+
+	<!-- FILTER RECORDINGS -->
+	$('#filter').keyup(function() {
+		var a = $(this).val();
+		if (a.length > 0) {
+			children = ($("#accordion1").children());
+			var containing = children.filter(function() {
+				var regex = new RegExp('\\b'+a, 'i');
+				return regex.test($('a', this).text());
+			}).slideDown();
+			children.not(containing).slideUp();
+		} else {
+			children.slideDown();
+		}
+		return false;
+	});
 });
