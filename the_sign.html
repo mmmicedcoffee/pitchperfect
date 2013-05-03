@@ -67,6 +67,7 @@
     <script type="text/javascript" src="external_js/vexflow-min.js"></script>
     <script type="text/javascript" src="external_js/audiolet.min.js"></script>
     <script type="text/javascript" src="playback.js"></script>
+    <script type="text/javascript" src="sheet_music.js"></script>
     <script type="text/javascript" src="index.js"></script>
 
   <script>
@@ -234,7 +235,7 @@
 	    			</div>
 	    			<div class="span3 offset6">
 	    				<div class="btn-group" data-toggle="buttons-checkbox">	    					
-	    					<button class="btn btn-small play">
+	    					<button class="btn btn-small" onclick="playExample()">
 	    						<i class="icon-play play-color"></i>
 	    					</button>
 	    					<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-small">
@@ -295,66 +296,6 @@
     			<div class="row-fluid">
     				<div class="span12" id="music-pane">
 	    				<canvas width="620" height="400"></canvas>
-	    				<p>
-							<script>
-								var canvas = $("canvas")[0];
-								canvas.width = $("#music-pane").width();
-
-								// TODO: please clean this up into a separate js file
-								var drawCanvas = function(canvas) {
-								    var renderer = new Vex.Flow.Renderer(canvas,
-								    Vex.Flow.Renderer.Backends.CANVAS);
-								    var w = canvas.width - 20;
-
-								    var ctx = renderer.getContext();
-								    var stave = new Vex.Flow.Stave(10, 0, w);
-								    stave.addClef("treble").setContext(ctx).draw();
-								    stave.addTimeSignature("4/4").setContext(ctx).draw();
-
-								    var staveTwo = new Vex.Flow.Stave(10, 100, w);
-								    staveTwo.addClef("treble").setContext(ctx).draw();
-								    staveTwo.addTimeSignature("4/4").setContext(ctx).draw();
-
-								    // Create the notes
-									var notes = [
-									    // A quarter-note C.
-									    new Vex.Flow.StaveNote({ keys: ["c/4"], duration: "q" }),
-									    // A quarter-note D.
-									    new Vex.Flow.StaveNote({ keys: ["d/4"], duration: "q" }),
-									    // A quarter-note rest. Note that the key (b/4) specifies the vertical
-									    // position of the rest.
-									    new Vex.Flow.StaveNote({ keys: ["b/4"], duration: "qr" }),
-									    // A C-Major chord.
-									    new Vex.Flow.StaveNote({ keys: ["c/4", "e/4", "g/4"], duration: "q" })
-									];
-
-									// Create a voice in 4/4
-									var voice = new Vex.Flow.Voice({
-									    num_beats: 4,
-									    beat_value: 4,
-									    resolution: Vex.Flow.RESOLUTION
-									});
-
-									// Add notes to voice
-									voice.addTickables(notes);
-
-									// Format and justify the notes to w pixels
-									var formatter = new Vex.Flow.Formatter().
-									    joinVoices([voice]).format([voice], w);
-
-									// Render voice
-									voice.draw(ctx, stave);
-									voice.draw(ctx, staveTwo);
-								}
-
-								drawCanvas(canvas);
-
-								$(window).resize(function(){
-									canvas.width = $("#music-pane").width();
-									drawCanvas(canvas);
-								});
-							</script>
-						</p>
 					</div>
     			</div>
     		</div>
@@ -368,7 +309,7 @@
 								<div class="accordion-heading">
 									<div class="row-fluid">
 										<div class="span1">
-										<button onclick="playExample()" type="" class="btn btn-mini" style="margin:7px;">
+										<button class="btn btn-mini play" style="margin:7px;">
 					    					<i class="icon-play play-color"></i>
 						    			</button></div>
 						    			<div class="span9">
@@ -447,6 +388,19 @@
 			<button class="btn btn-primary" data-dismiss="modal">Close</button>
 		</div>
 	</div>
+
+	<script>
+  		// CANVAS STUFF
+		var canvas = $("canvas")[0];
+		canvas.width = $("#music-pane").width();
+
+		drawCanvas(canvas);
+
+		$(window).resize(function(){
+			canvas.width = $("#music-pane").width();
+			drawCanvas(canvas);
+		});
+	</script>
 
 </body>
 </html>
