@@ -11,8 +11,8 @@
 -->
 
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 	<title>Pitch Perfect</title>
 
 	<!-- Load style sheets -->
@@ -110,6 +110,36 @@
       		$("#metronome").val(ui.value);
       	}
       });
+         // INPUT STUFF
+         // TODO: negative inputs currently allowed
+        $("#tempo").change(function () {
+        	if (this.value > 180) {
+        		this.value = 180;
+        	} 
+		    var value = this.value;
+		    $("#tempoSlider").slider("value", parseInt(value));
+		});
+        $("#metronome").change(function () {
+        	if (this.value > 180) {
+        		this.value = 180;
+        	} 
+		    var value = this.value;
+		    $("#metronomeSlider").slider("value", parseInt(value));
+		});
+        $("#myVoicePart").change(function () {
+        	if (this.value > 100) {
+        		this.value = 100;
+        	} 
+		    var value = this.value;
+		    $("#myVoicePartSlider").slider("value", parseInt(value));
+		});
+        $("#otherVoicePart").change(function () {
+        	if (this.value > 100) {
+        		this.value = 100;
+        	} 
+		    var value = this.value;
+		    $("#otherVoicePartSlider").slider("value", parseInt(value));
+		});
         var audioElement = document.createElement('audio');
         audioElement.setAttribute('src','images/Ace_of_Base_-_The_Sign.mp3');
 
@@ -133,44 +163,6 @@
 		function running() {
     		return $('.play').hasClass('active');
 		}
-
-        // INPUT STUFF
-        $("#tempo").change(function () {
-        	if (this.value > 180) {
-        		this.value = 180;
-        	} else if (this.value < 0) {
-        		this.value = 0;
-        	}
-		    var value = this.value;
-		    $("#tempoSlider").slider("value", parseInt(value));
-		});
-        $("#metronome").change(function () {
-        	if (this.value > 180) {
-        		this.value = 180;
-        	} else if (this.value < 0) {
-        		this.value = 0;
-        	}
-		    var value = this.value;
-		    $("#metronomeSlider").slider("value", parseInt(value));
-		});
-        $("#myVoicePart").change(function () {
-        	if (this.value > 100) {
-        		this.value = 100;
-        	} else if (this.value < 0) {
-        		this.value = 0;
-        	}
-		    var value = this.value;
-		    $("#myVoicePartSlider").slider("value", parseInt(value));
-		});
-        $("#otherVoicePart").change(function () {
-        	if (this.value > 100) {
-        		this.value = 100;
-        	} else if (this.value < 0) {
-        		this.value = 0;
-        	}
-		    var value = this.value;
-		    $("#otherVoicePartSlider").slider("value", parseInt(value));
-		});
 
 		<!-- FILTER RECORDINGS -->
 		$('#filter').keyup(function() {
@@ -292,8 +284,8 @@
 	    			</div>
 	    			<div class="span3 offset6">
 	    				<div class="btn-group">	    					
-	    					<button class="btn btn-small" onclick="playExample()">
-	    						<i class="icon-play play-color"></i>
+	    					<button class="btn btn-small">
+	    						<i id="playButton" class="icon-play play-color"></i>
 	    					</button>
 	    					<button class="btn btn-small" onclick="record()">
 	    						<i class="icon-record record-color"></i>
@@ -306,9 +298,9 @@
 	    			</div>
 	    		</div>
 	    		<div class="row-fluid">
-	    			<div class="help-text" style="padding:15px;">1. Play the music by setting options below.
-	    			<br>2. Make a recording!
-	    			<br>3. Listen to recordings and read/write comments on the right.</div>
+	    			<div class="help-text" style="padding:15px;">1. Play the music by setting options below.<br />
+	    			2. Make a recording!<br />
+	    			3. Listen to recordings and read/write comments on the right.</div>
 	    		</div>
     			<div class="row-fluid">
 					<div class="span12" id="comments">
@@ -461,6 +453,35 @@
 			canvas.width = $("#music-pane").width();
 			drawCanvas(canvas);
 		});
+
+		// play/pause toggle
+
+	    var playing = false;
+
+	    var helper = function () {
+	        if (playing == false) {
+	            playExample();
+	            playing = true;
+	            $("i#playButton").addClass("icon-pause");
+	            $("i#playButton").removeClass("icon-play");
+	            $("i#playButton").removeClass("play-color");
+	            setTimeout(function() {
+		            playing = false;
+		            $("i#playButton").addClass("icon-play");
+		            $("i#playButton").addClass("play-color");
+		            $("i#playButton").removeClass("icon-pause");
+	            }, 8500);
+	        } else {
+	            playing = false;
+	            $("i#playButton").addClass("icon-play");
+	            $("i#playButton").addClass("play-color");
+	            $("i#playButton").removeClass("icon-pause");
+	        }
+	    }
+
+	    $("i#playButton").click(function() {
+	        helper();
+	    });
 	</script>
 
 </body>
