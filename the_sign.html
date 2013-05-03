@@ -212,7 +212,6 @@
       });
 
       function record(){
-      	$('#record').click = stop;
         Recorder.record({
           start: function(){
             //alert("recording starts now. press stop when youre done. and then play or upload if you want.");
@@ -294,11 +293,14 @@
 	    			</div>
 	    			<div class="span3 offset6">
 	    				<div class="btn-group" data-toggle="buttons-checkbox">	    					
-	    					<button id="play" class="btn btn-small" onclick="play()">
+	    					<button class="btn btn-small" onclick="playExample()">
 	    						<i class="icon-play play-color"></i>
 	    					</button>
-	    					<button id="record" class="btn btn-small" onclick="record()">
+	    					<button class="btn btn-small" onclick="record()">
 	    						<i class="icon-record record-color"></i>
+	    					</button>
+	    					<button class="btn btn-small" onclick="stop()">
+	    						<i class="icon-stop stop-color"></i>
 	    					</button>
 	    					<span class="label" id="time">0:00</span>
 	    				</div>
@@ -369,7 +371,7 @@
 								<div class="accordion-heading">
 									<div class="row-fluid">
 										<div class="span1">
-										<button class="btn btn-mini play" style="margin:7px;">
+										<button class="btn btn-mini" style="margin:7px;" onclick="play()">
 					    					<i class="icon-play play-color"></i>
 						    			</button></div>
 						    			<div class="span9">
