@@ -1,32 +1,22 @@
-$(function() {
-    // play/pause toggle
-    var init = true;
-    var playing = false;
+var init = true;
+var playing = false;
 
-    // TODO: when it's done playing, reset back to playing = false!
-    $("#playButton").click(function() {
+$(function() {
+    // play/pause/stop buttons
+    $("#playbackBtn").click(function() {
         if (init) {
             initPlayback();
-            playing = true;
-            $("#playIcon").addClass("icon-pause");
-            $("#playIcon").removeClass("icon-play");
-            $("#playIcon").removeClass("play-color");
-            init = false;
         } else {
             if (!playing) {
                 unpausePlayback();
-                playing = true;
-                $("#playIcon").addClass("icon-pause");
-                $("#playIcon").removeClass("icon-play");
-                $("#playIcon").removeClass("play-color");
             } else {
                 pausePlayback();
-                playing = false;
-                $("#playIcon").addClass("icon-play");
-                $("#playIcon").addClass("play-color");
-                $("#playIcon").removeClass("icon-pause");
             }
         }
+    });
+
+    $("#stopPlaybackBtn").click(function() {
+        resetPlayback();
     });
 });
 
@@ -110,6 +100,9 @@ var AudioletApp = function() {
 
         this.audiolet.scheduler.addRelative(14, function() {
             this.playNote(262, 2);
+            this.audiolet.scheduler.addRelative(2, function () {
+                resetPlayback();
+            })
         }.bind(this));
 
     }.bind(this));
@@ -135,12 +128,38 @@ AudioletApp.prototype.unpause = function() {
 function initPlayback() {
     extend(Synth, AudioletGroup);
     this.audioletApp = new AudioletApp();
+    playing = true;
+    init = false;
+    togglePause();
 };
 
 function pausePlayback() {
     this.audioletApp.pause();
+    playing = false;
+    togglePlay();
 }
 
 function unpausePlayback() {
     this.audioletApp.unpause();
+    playing = true;
+    togglePause();
+}
+
+function resetPlayback() {
+    this.audioletApp.pause();
+    init = true;
+    playing = false;
+    togglePlay();
+}
+
+function togglePlay() {
+    $("#playbackIcon").addClass("icon-play");
+    $("#playbackIcon").addClass("play-color");
+    $("#playbackIcon").removeClass("icon-pause");        
+}
+
+function togglePause() {
+    $("#playbackIcon").addClass("icon-pause");
+    $("#playbackIcon").removeClass("icon-play");
+    $("#playbackIcon").removeClass("play-color");
 }
