@@ -370,48 +370,5 @@
 			<button class="btn btn-primary" data-dismiss="modal">Close</button>
 		</div>
 	</div>
-
-	<script>
-  		// CANVAS STUFF
-		var canvas = $("canvas")[0];
-		canvas.width = $("#music-pane").width();
-
-		drawCanvas(canvas);
-
-		$(window).resize(function(){
-			canvas.width = $("#music-pane").width();
-			drawCanvas(canvas);
-		});
-
-		// play/pause toggle
-
-	    var playing = false;
-
-	    var helper = function () {
-	        if (playing == false) {
-	            playExample();
-	            playing = true;
-	            $("#playIcon").addClass("icon-pause");
-	            $("#playIcon").removeClass("icon-play");
-	            $("#playIcon").removeClass("play-color");
-	            setTimeout(function() {
-		            playing = false;
-		            $("#playIcon").addClass("icon-play");
-		            $("#playIcon").addClass("play-color");
-		            $("#playIcon").removeClass("icon-pause");
-	            }, 8500);
-	        } else {
-	            playing = false;
-	            $("#playIcon").addClass("icon-play");
-	            $("#playIcon").addClass("play-color");
-	            $("#playIcon").removeClass("icon-pause");
-	        }
-	    }
-
-	    $("#playButton").click(function() {
-	        helper();
-	    });
-	</script>
-
 </body>
 </html>

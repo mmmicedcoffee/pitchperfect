@@ -1,3 +1,16 @@
+$(function () {
+	// CANVAS STUFF
+	var canvas = $("canvas")[0];
+	canvas.width = $("#music-pane").width();
+
+	drawCanvas(canvas);
+
+	$(window).resize(function(){
+		canvas.width = $("#music-pane").width();
+		drawCanvas(canvas);
+	});
+});
+
 function drawCanvas(canvas) {
     var renderer = new Vex.Flow.Renderer(canvas, Vex.Flow.Renderer.Backends.CANVAS);
     var w = canvas.width - 20;
