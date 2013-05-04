@@ -67,76 +67,9 @@
     <script type="text/javascript" src="sheet_music.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <script type='text/javascript' src="external_js/recorder.js"></script>
+    <script type="text/javascript" src="practice_options.js"></script>
 
-  <script>
-      
-  	  // SLIDER STUFF
-      $("#tempoSlider").slider({
-      	range: "min",
-      	value:$("#tempo").val(),
-      	min:1,
-      	max:180,
-      	slide: function(event,ui) {
-      		$("#tempo").val(ui.value);
-      	}
-      });
-      $("#myVoicePartSlider").slider({
-      	range: "min",
-      	value:$("#myVoicePart").val(),
-      	min:1,
-      	max:100,
-      	slide: function(event,ui) {
-      		$("#myVoicePart").val(ui.value);
-      	}
-      });
-      $("#otherVoicePartSlider").slider({
-      	range: "min",
-      	value:$("#otherVoicePart").val(),
-      	min:1,
-      	max:100,
-      	slide: function(event,ui) {
-      		$("#otherVoicePart").val(ui.value);
-      	}
-      });
-      $("#metronomeSlider").slider({
-      	range: "min",
-      	value:$("#metronome").val(),
-      	min:1,
-      	max:180,
-      	slide: function(event,ui) {
-      		$("#metronome").val(ui.value);
-      	}
-      });
-         // INPUT STUFF
-         // TODO: negative inputs currently allowed
-        $("#tempo").change(function () {
-        	if (this.value > 180) {
-        		this.value = 180;
-        	} 
-		    var value = this.value;
-		    $("#tempoSlider").slider("value", parseInt(value));
-		});
-        $("#metronome").change(function () {
-        	if (this.value > 180) {
-        		this.value = 180;
-        	} 
-		    var value = this.value;
-		    $("#metronomeSlider").slider("value", parseInt(value));
-		});
-        $("#myVoicePart").change(function () {
-        	if (this.value > 100) {
-        		this.value = 100;
-        	} 
-		    var value = this.value;
-		    $("#myVoicePartSlider").slider("value", parseInt(value));
-		});
-        $("#otherVoicePart").change(function () {
-        	if (this.value > 100) {
-        		this.value = 100;
-        	} 
-		    var value = this.value;
-		    $("#otherVoicePartSlider").slider("value", parseInt(value));
-		});
+	<script>
         var audioElement = document.createElement('audio');
         audioElement.setAttribute('src','images/Ace_of_Base_-_The_Sign.mp3');
 
@@ -160,7 +93,7 @@
 		function running() {
     		return $('.play').hasClass('active');
 		}
-  </script>
+	</script>
 
 </head>
 
