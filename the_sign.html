@@ -252,7 +252,7 @@
 	    			<div class="span6 offset6">
 	    				<div class="btn-group">	    					
 	    					<button id="playButton" class="btn btn-small">
-	    						<i class="icon-play play-color"></i>
+	    						<i id="playIcon" class="icon-play play-color"></i>
 	    					</button>
 	    					<button class="btn btn-small" onclick="record()">
 	    						<i class="icon-record record-color"></i>
@@ -450,20 +450,20 @@
 	        if (playing == false) {
 	            playExample();
 	            playing = true;
-	            $("#playButton").addClass("icon-pause");
-	            $("#playButton").removeClass("icon-play");
-	            $("#playButton").removeClass("play-color");
+	            $("#playIcon").addClass("icon-pause");
+	            $("#playIcon").removeClass("icon-play");
+	            $("#playIcon").removeClass("play-color");
 	            setTimeout(function() {
 		            playing = false;
-		            $("#playButton").addClass("icon-play");
-		            $("#playButton").addClass("play-color");
-		            $("#playButton").removeClass("icon-pause");
+		            $("#playIcon").addClass("icon-play");
+		            $("#playIcon").addClass("play-color");
+		            $("#playIcon").removeClass("icon-pause");
 	            }, 8500);
 	        } else {
 	            playing = false;
-	            $("#playButton").addClass("icon-play");
-	            $("#playButton").addClass("play-color");
-	            $("#playButton").removeClass("icon-pause");
+	            $("#playIcon").addClass("icon-play");
+	            $("#playIcon").addClass("play-color");
+	            $("#playIcon").removeClass("icon-pause");
 	        }
 	    }
 
