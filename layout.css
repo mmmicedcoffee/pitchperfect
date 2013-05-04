@@ -176,12 +176,21 @@ table {
 }
 
 #filter {
-	width: 240px;
-	margin-left: 10px;
+	width: 245px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
 .comment {
 	padding: 5px;
 	border-bottom: 1px solid #e3e3e3;
+}
+
+.recording-dates {
+	margin: 5px;
+	text-align: right;
+}
+
+.accordion-toggle {
+	margin-left: -4px;
 }
