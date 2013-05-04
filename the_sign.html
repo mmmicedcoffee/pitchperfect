@@ -450,24 +450,24 @@
 	        if (playing == false) {
 	            playExample();
 	            playing = true;
-	            $("i#playButton").addClass("icon-pause");
-	            $("i#playButton").removeClass("icon-play");
-	            $("i#playButton").removeClass("play-color");
+	            $("#playButton").addClass("icon-pause");
+	            $("#playButton").removeClass("icon-play");
+	            $("#playButton").removeClass("play-color");
 	            setTimeout(function() {
 		            playing = false;
-		            $("i#playButton").addClass("icon-play");
-		            $("i#playButton").addClass("play-color");
-		            $("i#playButton").removeClass("icon-pause");
+		            $("#playButton").addClass("icon-play");
+		            $("#playButton").addClass("play-color");
+		            $("#playButton").removeClass("icon-pause");
 	            }, 8500);
 	        } else {
 	            playing = false;
-	            $("i#playButton").addClass("icon-play");
-	            $("i#playButton").addClass("play-color");
-	            $("i#playButton").removeClass("icon-pause");
+	            $("#playButton").addClass("icon-play");
+	            $("#playButton").addClass("play-color");
+	            $("#playButton").removeClass("icon-pause");
 	        }
 	    }
 
-	    $("i#playButton").click(function() {
+	    $("#playButton").click(function() {
 	        helper();
 	    });
 	</script>
