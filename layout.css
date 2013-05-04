@@ -194,3 +194,27 @@ table {
 .accordion-toggle {
 	margin-left: -4px;
 }
+
+#board {
+	height: 440px;
+	overflow: auto;
+}
+
+#calendar {
+	margin-bottom: 20px;
+}
+
+#announcements {
+	height: 235px;
+	overflow: auto;
+}
+
+.well {
+	margin-bottom: 0;
+}
+
+#post {
+	margin-bottom: 20px;
+	width: 98%;
+	border: 1px solid black;
+}

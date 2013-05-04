@@ -1,12 +1,21 @@
 $(function() {
-	var user = "Anna";
+	$('#post').keypress(function(event) {
+		if (event.which == 13) {
+			var node = document.createElement('div');
+			node.setAttribute('class', 'feed-item');
+			var d = new Date();
+			node.innerHTML = "[" + (d.getMonth()+1) + "/" + d.getDate() + "] " + "<a href='denkrick.html'><b>Anna</b></a>: " + $(this).val();
+			$('#board').prepend(node);
+			$(this).val('');
+		}
+	});
 
 	$('.input-comment').keypress(function(event) {
 		if (event.which == 13) {
 			var node = document.createElement('div');
 			node.setAttribute('class', 'comment');
 			var d = new Date();
-			node.innerHTML = "[" + (d.getMonth()+1) + "/" + d.getDate() + "] " + "<b>" + user + ":</b> " + $(this).val();
+			node.innerHTML = "[" + (d.getMonth()+1) + "/" + d.getDate() + "] " + "<b>Anna:</b> " + $(this).val();
 			this.parentNode.insertBefore(node, this);
 			$(this).val('');
 		}
@@ -27,4 +36,6 @@ $(function() {
 		}
 		return false;
 	});
+
+	$('#post').focus();
 });
