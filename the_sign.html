@@ -184,9 +184,6 @@
     			<div class="row-fluid">
 	    			<div class="span6 offset6">
 	    				<div class="btn-group">	    					
-	    					<button id="playButton" class="btn btn-small">
-	    						<i id="playIcon" class="icon-play play-color"></i>
-	    					</button>
 	    					<button class="btn btn-small" onclick="record()">
 	    						<i class="icon-record record-color"></i>
 	    					</button>
@@ -206,7 +203,18 @@
 	    		</div>
     			<div class="row-fluid">
 					<div class="span12" id="comments">
-						<legend>Play Options</legend>
+						<legend>
+							Play Options
+		    				<div class="btn-group">	
+								<button id="playButton" class="btn btn-small">
+		    						<i id="playIcon" class="icon-play play-color"></i>
+		    					</button>
+		    					<button class="btn btn-small">
+		    						<i class="icon-stop stop-color"></i>
+		    					</button>
+		    					<span class="label" id="playTime">0:00</span>
+		    				</div>
+						</legend>
 				    		<form class="form-horizontal" style="min-height:280px;">
 				    			<div class="practice-header">Tempo</div>
 				    			<div class="control-group">
