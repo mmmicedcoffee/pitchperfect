@@ -98,6 +98,7 @@
 </head>
 
 <body>
+	<!-- DON'T MOVE, WILL BREAK D: -->
 	<script>
 	  function timecode(ms) {
         var hms = {
@@ -182,26 +183,6 @@
     	<div class="row-fluid">
     		<div class="span3">
     			<div class="row-fluid">
-	    			<div class="span6 offset6">
-	    				<div class="btn-group">	    					
-	    					<button class="btn btn-small" onclick="record()">
-	    						<i class="icon-record record-color"></i>
-	    					</button>
-	    					<button class="btn btn-small" onclick="stop()">
-	    						<i class="icon-stop stop-color"></i>
-	    					</button>
-	    					<span class="label" id="time">0:00</span>
-	    				</div>
-	    			</div>
-	    		</div>
-	    		<div class="row-fluid">
-	    			<div class="help-text" style="padding:15px;">TIPS:<br />
-	    				- Play the music by setting options below.<br />
-	    				- Make a recording!<br />
-	    				- Listen to recordings and read/write comments on the right.
-	    			</div>
-	    		</div>
-    			<div class="row-fluid">
 					<div class="span12" id="comments">
 						<legend>
 							Play Options
@@ -214,6 +195,9 @@
 		    					</button>
 		    				</div>
 						</legend>
+						<div class="help-text" style="padding:15px;">
+	    					Play the music by setting options below.<br />
+	    				</div>
 				    		<form class="form-horizontal" style="min-height:280px;">
 				    			<div class="practice-header">Tempo</div>
 				    			<div class="control-group">
@@ -262,6 +246,24 @@
     			</div>
     		</div>
     		<div class="span3">
+    			<div class="row-fluid">
+	    			<div class="span6 offset6">
+	    				<div class="btn-group">	    					
+	    					<button class="btn btn-small" onclick="record()">
+	    						<i class="icon-record record-color"></i>
+	    					</button>
+	    					<button class="btn btn-small" onclick="stop()">
+	    						<i class="icon-stop stop-color"></i>
+	    					</button>
+	    					<span class="label" id="time">0:00</span>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="row-fluid">
+	    			<div class="help-text" style="padding:15px;">
+	    				Make a recording that your friends can comment on!
+	    			</div>
+	    		</div>
     			<div class="row-fluid">
     				<div class="span12">
     					<ul class="nav nav-tabs">
