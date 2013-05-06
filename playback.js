@@ -113,10 +113,6 @@ AudioletApp.prototype.playNote = function(frequency, length) {
     synth.connect(this.audiolet.output);
 }
 
-AudioletApp.prototype.stop = function() {
-    // TODO: how to stop? D:
-}
-
 AudioletApp.prototype.pause = function() {
     this.audiolet.device.paused = true;
 }
