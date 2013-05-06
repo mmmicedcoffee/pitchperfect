@@ -185,7 +185,6 @@
     			<div class="row-fluid">
 					<div class="span12" id="comments">
 						<legend>
-							Play Options
 		    				<div class="btn-group">	
 								<button id="playbackBtn" class="btn btn-small">
 		    						<i id="playbackIcon" class="icon-play play-color"></i>
@@ -195,40 +194,32 @@
 		    					</button>
 		    				</div>
 						</legend>
-						<div class="help-text" style="padding:15px;">
-	    					Play the music by setting options below.<br />
-	    				</div>
+						<h4 style="font-weight: bold; text-align: center; margin-bottom:20px;">
+	    					Play Options<br />
+	    				</h4>
 				    		<form class="form-horizontal" style="min-height:280px;">
-				    			<div class="practice-header">Tempo</div>
+				    			<div class="practice-header">My Voice Part</div>
+								<div class="control-group">
+									<div class="row-fluid">
+										<div class="span2"><i class="icon-volume-up" style="margin: 0 15px;"></i></div>
+										<div class="span10"><div id="myVoicePartSlider" style="width: 90%;"></div></div>
+									</div>
+								</div>
+								<div class="practice-header">Other Voice Parts</div>
+								<div class="control-group">
+									<div class="row-fluid">
+										<div class="span2"><i class="icon-volume-up" style="margin: 0 15px;"></i></div>
+										<div class="span10"><div id="otherVoicePartSlider" style="width: 90%;"></div></div>
+									</div>
+								</div>
 				    			<div class="control-group">
-									<label class="control-label" for="tempo">Playback</label>
+									<label class="control-label" for="tempo">Playback Tempo</label>
 								    <div class="controls">
 								    	<input class="input-mini" type="text" id="tempo" value="20" />
 								    </div>
 									<div id="tempoSlider"></div>
 								</div>
-								<div class="control-group">
-									<label class="control-label" for="metronome">Metronome</label>
-								    <div class="controls">
-								    	<input class="input-mini" type="text" id="metronome" value="20" />
-								    </div>
-									<div id="metronomeSlider"></div>
-								</div>
-				    			<div class="practice-header">Volume</div>
-								<div class="control-group">
-									<label class="control-label" for="myVoicePart">My Voice Part</label>
-								    <div class="controls">
-								    	<input class="input-mini" type="text" id="myVoicePart" value="20" />
-								    </div>
-									<div id="myVoicePartSlider"></div>
-								</div>
-								<div class="control-group">
-									<label class="control-label" for="otherVoicePart">Other Voice Parts</label>
-								    <div class="controls">
-								    	<input class="input-mini" type="text" id="otherVoicePart" value="20" />
-								    </div>
-									<div id="otherVoicePartSlider"></div>
-								</div>
+								<div class="practice-header"><input type="checkbox"> Metronome</div>
 				    		</form>
 					</div>
 				</div>
