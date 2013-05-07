@@ -164,8 +164,14 @@
 
 		$('#stopRecord').click(function() {
 			stop();
-			var title = prompt();
+			var title = prompt("Name your recording");
+                        $('.accordion-group').show();
+			$('#recordingTitle').text("Anna - "+title);
 		});
+
+		$('#play').click(function() {
+			play();
+		})
 
 		})
 	</script>
@@ -280,16 +286,16 @@
       						<div class="tab-pane active" id="tab1">
       							<input type="text" placeholder="Search Recordings" id="filter">
 								<div class="accordion" id="accordion1" style="height:400px;overflow:auto;">
-									<div class="accordion-group">
+									<div class="accordion-group" style="display:none">
 										<div class="accordion-heading">
 											<div class="row-fluid">
 												<div class="span2">
-													<button class="btn btn-small" style="margin:5px;" onclick="play()">
+													<button class="btn btn-small" style="margin:5px;" id="play">
 					    								<i class="icon-play play-color"></i>
 						    						</button>
 						    					</div>
 						    					<div class="span8">
-													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">Anna - First Try</a>
+													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" id="recordingTitle">Anna - First Try</a>
 												</div>
 												<div class="span2">
 													<p class="recording-dates">4/1</p>
