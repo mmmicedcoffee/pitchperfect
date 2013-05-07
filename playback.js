@@ -36,6 +36,7 @@ var Synth = function(audiolet, frequency, length) {
         }.bind(this)
     );
     this.volumeEnvelope = new MulAdd(this.audiolet, vol);
+    console.log(vol);
 
     this.modulator.connect(this.modulatorMulAdd);
     this.modulatorMulAdd.connect(this.sine);
@@ -48,35 +49,35 @@ var Synth = function(audiolet, frequency, length) {
 };
 
 var Kick = function(audiolet) {
-        AudioletGroup.call(this, audiolet, 0, 1);
-        // White noise source
-        this.white = new WhiteNoise(audiolet);
+    AudioletGroup.call(this, audiolet, 0, 1);
+    // White noise source
+    this.white = new WhiteNoise(audiolet);
 
-        // Gain envelope
-        this.gainEnv = new PercussiveEnvelope(audiolet, 1, 0.01, 0.05,
-            function() {
-                // Remove the group ASAP when env is complete
-                this.audiolet.scheduler.addRelative(0,
-                                                    this.remove.bind(this));
-            }.bind(this)
-        );
-        this.gainEnvMulAdd = new MulAdd(audiolet, 0.1);
-        this.gain = new Gain(audiolet);
+    // Gain envelope
+    this.gainEnv = new PercussiveEnvelope(audiolet, 1, 0.01, 0.05,
+        function() {
+            // Remove the group ASAP when env is complete
+            this.audiolet.scheduler.addRelative(0,
+                                                this.remove.bind(this));
+        }.bind(this)
+    );
+    this.gainEnvMulAdd = new MulAdd(audiolet, 0.1);
+    this.gain = new Gain(audiolet);
 
-        // Filter
-        this.filter = new BandPassFilter(audiolet, 3000);
+    // Filter
+    this.filter = new BandPassFilter(audiolet, 3000);
 
-        this.upMixer = new UpMixer(audiolet, 2);
+    this.upMixer = new UpMixer(audiolet, 2);
 
-        // Connect the main signal path
-        this.white.connect(this.filter);
-        this.filter.connect(this.gain);
+    // Connect the main signal path
+    this.white.connect(this.filter);
+    this.filter.connect(this.gain);
 
-        // Connect the gain envelope
-        this.gainEnv.connect(this.gainEnvMulAdd);
-        this.gainEnvMulAdd.connect(this.gain, 0, 1);
-        this.gain.connect(this.upMixer);
-        this.upMixer.connect(this.outputs[0]);
+    // Connect the gain envelope
+    this.gainEnv.connect(this.gainEnvMulAdd);
+    this.gainEnvMulAdd.connect(this.gain, 0, 1);
+    this.gain.connect(this.upMixer);
+    this.upMixer.connect(this.outputs[0]);
 }
 
 var AudioletApp = function() {
@@ -235,6 +236,10 @@ function togglePause() {
 
 function adjustVolume(newVol) {
     vol = newVol;
+    // audiolet has a bug when volume is 0, so change 0 to 0.00001
+    if (vol == 0) {
+        vol = 0.00001;
+    }
 }
 
 function adjustTempo(newTempo) {

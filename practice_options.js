@@ -8,6 +8,9 @@ $(function() {
         slide: function(event,ui) {
         	$("#tempo").val(ui.value);
           adjustTempo(ui.value);
+        },
+        stop: function(event,ui) {
+          adjustTempo(ui.value);
         }
     });
     $("#myVoicePartSlider").slider({
@@ -17,8 +20,11 @@ $(function() {
       	max:100,
       	slide: function(event,ui) {
       		$("#myVoicePartLabel").text(ui.value + "%");
-            adjustVolume(ui.value/100);
-      	}
+          adjustVolume(ui.value/100);
+      	},
+        stop: function(event,ui) {
+          adjustVolume(ui.value/100);
+        }
     });
     $("#otherVoicePartSlider").slider({
       	range: "min",
