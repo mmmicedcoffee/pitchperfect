@@ -1,5 +1,6 @@
 var init = true;
 var playing = false;
+var vol = 0.75;
 
 $(function() {
     // play/pause/stop buttons
@@ -32,11 +33,13 @@ var Synth = function(audiolet, frequency, length) {
             this.audiolet.scheduler.addRelative(0, this.remove.bind(this));
         }.bind(this)
     );
+    this.volumeEnvelope = new MulAdd(this.audiolet, vol);
 
     this.modulator.connect(this.modulatorMulAdd);
     this.modulatorMulAdd.connect(this.sine);
 
-    this.envelope.connect(this.gain, 0, 1);
+    this.envelope.connect(this.volumeEnvelope);
+    this.volumeEnvelope.connect(this.gain, 0, 1);
     this.sine.connect(this.gain);
 
     this.gain.connect(this.outputs[0]);
@@ -158,4 +161,8 @@ function togglePause() {
     $("#playbackIcon").addClass("icon-pause");
     $("#playbackIcon").removeClass("icon-play");
     $("#playbackIcon").removeClass("play-color");
+}
+
+function adjustVolume(newVol) {
+    vol = newVol;
 }

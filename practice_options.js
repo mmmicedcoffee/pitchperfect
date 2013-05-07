@@ -11,11 +11,12 @@ $(function() {
     });
     $("#myVoicePartSlider").slider({
       	range: "min",
-      	value:$("#myVoicePart").val(),
-      	min:1,
+      	value:75,
+      	min:0,
       	max:100,
       	slide: function(event,ui) {
-      		$("#myVoicePart").val(ui.value);
+      		$("#myVoicePartLabel").text(ui.value + "%");
+            adjustVolume(ui.value/100);
       	}
     });
     $("#otherVoicePartSlider").slider({
