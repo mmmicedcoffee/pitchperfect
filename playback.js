@@ -1,5 +1,6 @@
 var init = true;
 var playing = false;
+var tempo = 120;
 var vol = 0.75;
 
 $(function() {
@@ -47,6 +48,9 @@ var Synth = function(audiolet, frequency, length) {
 
 var AudioletApp = function() {
     this.audiolet = new Audiolet();
+
+    // Set BPM
+    this.audiolet.scheduler.setTempo(tempo);
 
     this.e = this.audiolet.scheduler.addAbsolute(0, function() {
         this.audiolet.scheduler.addRelative(0, function() {
@@ -154,15 +158,23 @@ function resetPlayback() {
 function togglePlay() {
     $("#playbackIcon").addClass("icon-play");
     $("#playbackIcon").addClass("play-color");
-    $("#playbackIcon").removeClass("icon-pause");        
+    $("#playbackIcon").removeClass("icon-pause");  
+    $("#tempoSlider").slider("option", "disabled", false);      
+    $("#tempo").removeAttr("disabled");
 }
 
 function togglePause() {
     $("#playbackIcon").addClass("icon-pause");
     $("#playbackIcon").removeClass("icon-play");
     $("#playbackIcon").removeClass("play-color");
+    $("#tempoSlider").slider("option", "disabled", true);   
+    $("#tempo").attr("disabled", "disabled");
 }
 
 function adjustVolume(newVol) {
     vol = newVol;
+}
+
+function adjustTempo(newTempo) {
+    tempo = newTempo;
 }

@@ -7,6 +7,7 @@ $(function() {
         max:180,
         slide: function(event,ui) {
         	$("#tempo").val(ui.value);
+          adjustTempo(ui.value);
         }
     });
     $("#myVoicePartSlider").slider({
@@ -47,6 +48,7 @@ $(function() {
         }
         var value = this.value;
         $("#tempoSlider").slider("value", parseInt(value));
+        adjustTempo(this.value);
     });
     $("#metronome").change(function () {
       	if (this.value > 180) {
