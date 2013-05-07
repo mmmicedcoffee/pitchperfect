@@ -7,6 +7,10 @@ $(function() {
         max:180,
         slide: function(event,ui) {
         	$("#tempo").val(ui.value);
+          adjustTempo(ui.value);
+        },
+        stop: function(event,ui) {
+          adjustTempo(ui.value);
         }
     });
     $("#myVoicePartSlider").slider({
@@ -16,8 +20,11 @@ $(function() {
       	max:100,
       	slide: function(event,ui) {
       		$("#myVoicePartLabel").text(ui.value + "%");
-            adjustVolume(ui.value/100);
-      	}
+          adjustVolume(ui.value/100);
+      	},
+        stop: function(event,ui) {
+          adjustVolume(ui.value/100);
+        }
     });
     $("#otherVoicePartSlider").slider({
       	range: "min",
@@ -47,6 +54,7 @@ $(function() {
         }
         var value = this.value;
         $("#tempoSlider").slider("value", parseInt(value));
+        adjustTempo(this.value);
     });
     $("#metronome").change(function () {
       	if (this.value > 180) {
@@ -76,3 +84,19 @@ $(function() {
         $("#otherVoicePartSlider").slider("value", parseInt(value));
     });
 });
+
+var metronomeState = 0;
+
+function toggleMetronome() {
+  if (metronomeState == 0) {
+    $("#metronomeButton").text("Metronome On");
+    $("#metronomeButton").addClass("btn-info");
+    metronomeState = 1;
+    adjustMetronome(true);
+  } else {
+    $("#metronomeButton").text("Metronome Off");    
+    $("#metronomeButton").removeClass("btn-info");
+    metronomeState = 0;
+    adjustMetronome(false);
+  }
+}
