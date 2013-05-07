@@ -25,7 +25,6 @@
 	.tab-content {
 	    border-left: 1px solid #ddd;
 	    border-right: 1px solid #ddd;
-	    border-bottom: 1px solid #ddd;
 	    padding: 10px;
 	    min-height: 340px;
 	}
@@ -38,22 +37,6 @@
 	legend {
 		text-align: center;
 		font-weight: bold;
-	}
-	.practice-header {
-		font-weight: bold;
-		text-align: center;
-		margin: 20px 2px 8px 2px;
-	}
-	#comments {
-		margin-top:10px;
-		margin-bottom: 10px;
-	  	border: 1px solid #e3e3e3;
-		-webkit-border-radius: 4px;
-	    	-moz-border-radius: 4px;
-	        	border-radius: 4px;
-		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-		 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-		      	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 	}
 	</style>
 
@@ -202,7 +185,7 @@
     	<div class="row-fluid">
     		<div class="span3">
     			<div class="row-fluid">
-					<div class="span12" id="comments" style="margin-bottom:20px;">
+					<div class="span12" id="playbackBox" style="height:595px;margin-bottom:20px;">
 						<legend>Listen to the music!</legend>
 	    				<div class="row-fluid">
 	    					<div class="span4 offset4">
@@ -238,7 +221,9 @@
 							<div class="span2"><span style="margin:0px 5px;font-size:10pt;">180</span></div>
 						</div>
 				    	<div class="practice-header" style="margin-top:30px;" >
-				    		<button id="metronomeButton" class="btn btn-small" data-toggle="button" onclick="toggleMetronome()">Metronome Off</button>
+				    		<button id="metronomeButton" class="btn btn-small" data-toggle="button" onclick="toggleMetronome()">
+				    			Metronome Off
+				    		</button>
 				    	</div>
 					</div>
 				</div>
@@ -257,7 +242,7 @@
     		</div>
     		<div class="span3">
     			<div class="row-fluid">
-					<div class="span12" id="comments">
+					<div class="span12" id="recordingBox">
 						<legend>Make a recording!</legend>
 						<div class="row-fluid">
 	    					<div class="span4 offset4">
@@ -288,7 +273,7 @@
       					<div class="tab-content">
       						<div class="tab-pane active" id="tab1">
       							<input type="text" placeholder="Search Recordings" id="filter">
-								<div class="accordion" id="accordion1" style="height:400px;overflow:auto;">
+								<div class="accordion" id="accordion1" style="height:300px;overflow:auto;">
 									<div class="accordion-group" style="display:none">
 										<div class="accordion-heading">
 											<div class="row-fluid">
@@ -337,7 +322,7 @@
 							</div>
 							<div class="tab-pane" id="tab2">
 								<input type="text" placeholder="Search Recordings" id="filter">
-								<div class="accordion" id="accordion1" style="height:400px;overflow:auto;">
+								<div class="accordion" id="accordion1" style="height:300px;overflow:auto;">
 									<div class="accordion-group">
 										<div class="accordion-heading">
 											<div class="row-fluid">
