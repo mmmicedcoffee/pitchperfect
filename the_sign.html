@@ -42,7 +42,7 @@
 	.practice-header {
 		font-weight: bold;
 		text-align: center;
-		margin: 2px 2px 8px;
+		margin: 20px 2px 8px 2px;
 	}
 	#comments {
 		margin-top:10px;
@@ -210,7 +210,7 @@
 									<button id="playbackBtn" class="btn btn-small">
 		    							<i id="playbackIcon" class="icon-play play-color"></i>
 		    						</button>
-		    						<button id="stopPlaybackBtn" class="btn btn-small">
+		    						<button id="stopPlaybackBtn" class="btn btn-small" disabled>
 		    							<i class="icon-stop stop-color"></i>
 		    						</button>
 		    					</div>
@@ -237,7 +237,9 @@
 							<div class="span9"><div id="tempoSlider" style="margin:5px 0px 0px 14px;"></div></div>
 							<div class="span2"><span style="margin:0px 5px;font-size:10pt;">180</span></div>
 						</div>
-				    	<div class="practice-header" style="margin-bottom:20px;"><input type="checkbox" style="margin-top:0;">   Metronome</div>
+				    	<div class="practice-header" style="margin-top:30px;" >
+				    		<button id="metronomeButton" class="btn btn-small" data-toggle="button" onclick="toggleMetronome()">Metronome Off</button>
+				    	</div>
 					</div>
 				</div>
     		</div>
