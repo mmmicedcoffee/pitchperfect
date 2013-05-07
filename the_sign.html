@@ -164,6 +164,9 @@
 
 		$('#stopRecord').click(function() {
 			stop();
+			<button data-target="#notImplementedYetModal" data-toggle="modal" class="btn btn-small" style="margin:5px;">
+					    								<i class="icon-play play-color"></i>
+						    						</button>
 			var title = prompt("Name your recording");
                         $('.accordion-group').show();
 			$('#recordingTitle').text("Anna - "+title);
@@ -263,7 +266,7 @@
 									<button class="btn btn-small" id="startRecord">
 		    							<i class="icon-record record-color"></i>
 		    						</button>
-		    						<button class="btn btn-small" id="stopRecord">
+		    						<button data-target="#nameRecordingModal" class="btn btn-small" id="stopRecord">
 		    							<i class="icon-stop stop-color"></i>
 		    						</button>
 		    						<span class="label" id="time">0:00</span>
@@ -296,10 +299,10 @@
 						    						</button>
 						    					</div>
 						    					<div class="span8">
-													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" id="recordingTitle">Anna - First Try</a>
+													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" id="recordingTitle">Anna - Second Try</a>
 												</div>
 												<div class="span2">
-													<p class="recording-dates">4/1</p>
+													<p class="recording-dates">5/8</p>
 												</div>
 											</div>
 										</div>
@@ -318,7 +321,7 @@
 						    						</button>
 						    					</div>
 						    					<div class="span8">
-													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Anna - Second Try</a>
+													<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Anna - First Try</a>
 												</div>
 												<div class="span2">
 													<p class="recording-dates">4/14</p>
@@ -378,6 +381,18 @@
 		</div>
 		<div class="modal-footer">
 			<button class="btn btn-primary" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+	<div id="nameRecordingModal" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+	    	<button type="button" class="close" data-dismiss="modal">×</button>
+	    	<h3>Name your recording!</h3>
+		</div>
+		<div class="modal-body">
+	    	<p>This should be a textbox...</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" data-dismiss="modal">Ok</button>
 		</div>
 	</div>
 </body>
