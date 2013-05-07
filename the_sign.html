@@ -100,7 +100,9 @@
 <body>
 	<!-- DON'T MOVE, WILL BREAK D: -->
 	<script>
-		function timecode(ms) {
+		$(document).ready(function() {
+			console.log($('#startRecord'));
+					function timecode(ms) {
 			var hms = {
 				h: Math.floor(ms/(60*60*1000)),
 				m: Math.floor((ms/60000) % 60),
@@ -155,6 +157,17 @@
 				}
 			});
 		}
+
+		$('#startRecord').click(function() {
+			record();
+		});
+
+		$('#stopRecord').click(function() {
+			stop();
+			var title = prompt();
+		});
+
+		})
 	</script>
 	<!-- NAVBAR -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -220,25 +233,6 @@
 				    	<div class="practice-header" style="margin-bottom:20px;"><input type="checkbox" style="margin-top:0;">   Metronome</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span12" id="comments">
-						<legend>Make a recording!</legend>
-						<div class="row-fluid">
-	    					<div class="span4 offset4">
-	    						<div class="btn-group" style="margin-bottom:15px;">	
-									<button class="btn btn-small" onclick="record()">
-		    							<i class="icon-record record-color"></i>
-		    						</button>
-		    						<button class="btn btn-small" onclick="stop()">
-		    							<i class="icon-stop stop-color"></i>
-		    						</button>
-		    						<span class="label" id="time">0:00</span>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<center class="help-text" style="margin-bottom:20px;">Listen to your recordings on the right.</center>
-		    		</div>
-		    	</div>
     		</div>
     		<div class="span6">
     			<div class="row-fluid">
@@ -253,6 +247,25 @@
     			</div>
     		</div>
     		<div class="span3">
+    			<div class="row-fluid">
+					<div class="span12" id="comments">
+						<legend>Make a recording!</legend>
+						<div class="row-fluid">
+	    					<div class="span4 offset4">
+	    						<div class="btn-group" style="margin-bottom:15px;">	
+									<button class="btn btn-small" id="startRecord">
+		    							<i class="icon-record record-color"></i>
+		    						</button>
+		    						<button class="btn btn-small" id="stopRecord">
+		    							<i class="icon-stop stop-color"></i>
+		    						</button>
+		    						<span class="label" id="time">0:00</span>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<center class="help-text" style="margin-bottom:20px;">Listen to your recordings on the right.</center>
+		    		</div>
+		    	</div>
     			<div class="row-fluid">
     				<div class="span12">
     					<ul class="nav nav-tabs">
