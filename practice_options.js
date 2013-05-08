@@ -1,3 +1,17 @@
+var metronomeState = 0;
+
+function toggleMetronome() {
+  if (metronomeState == 0) {
+    // $("#metronomeButton").addClass("btn-info");
+    metronomeState = 1;
+    adjustMetronome(true);
+  } else { 
+    // $("#metronomeButton").removeClass("btn-info");
+    metronomeState = 0;
+    adjustMetronome(false);
+  }
+}
+
 $(function() {
     // SLIDER STUFF
     $("#tempoSlider").slider({
@@ -83,20 +97,10 @@ $(function() {
         var value = this.value;
         $("#otherVoicePartSlider").slider("value", parseInt(value));
     });
+
+  $("#metronomeCheckbox").change(function() {
+    toggleMetronome();
+  });
 });
 
-var metronomeState = 0;
 
-function toggleMetronome() {
-  if (metronomeState == 0) {
-    $("#metronomeButton").text("Metronome On");
-    $("#metronomeButton").addClass("btn-info");
-    metronomeState = 1;
-    adjustMetronome(true);
-  } else {
-    $("#metronomeButton").text("Metronome Off");    
-    $("#metronomeButton").removeClass("btn-info");
-    metronomeState = 0;
-    adjustMetronome(false);
-  }
-}
