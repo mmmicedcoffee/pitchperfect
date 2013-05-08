@@ -30,7 +30,7 @@ var Synth = function(audiolet, frequency, length) {
     this.modulatorMulAdd = new MulAdd(this.audiolet, frequency / 2, frequency);
 
     this.gain = new Gain(this.audiolet);
-    this.envelope = new PercussiveEnvelope(this.audiolet, 1, 0.2, 0.2 + (0.3*length),
+    this.envelope = new PercussiveEnvelope(this.audiolet, 1, 0.15, 0.15 + (0.2*length),
         function() {
             this.audiolet.scheduler.addRelative(0, this.remove.bind(this));
         }.bind(this)
@@ -48,35 +48,35 @@ var Synth = function(audiolet, frequency, length) {
 };
 
 var Kick = function(audiolet) {
-        AudioletGroup.call(this, audiolet, 0, 1);
-        // White noise source
-        this.white = new WhiteNoise(audiolet);
+    AudioletGroup.call(this, audiolet, 0, 1);
+    // White noise source
+    this.white = new WhiteNoise(audiolet);
 
-        // Gain envelope
-        this.gainEnv = new PercussiveEnvelope(audiolet, 1, 0.01, 0.05,
-            function() {
-                // Remove the group ASAP when env is complete
-                this.audiolet.scheduler.addRelative(0,
-                                                    this.remove.bind(this));
-            }.bind(this)
-        );
-        this.gainEnvMulAdd = new MulAdd(audiolet, 0.1);
-        this.gain = new Gain(audiolet);
+    // Gain envelope
+    this.gainEnv = new PercussiveEnvelope(audiolet, 1, 0.01, 0.05,
+        function() {
+            // Remove the group ASAP when env is complete
+            this.audiolet.scheduler.addRelative(0,
+                                                this.remove.bind(this));
+        }.bind(this)
+    );
+    this.gainEnvMulAdd = new MulAdd(audiolet, 0.1);
+    this.gain = new Gain(audiolet);
 
-        // Filter
-        this.filter = new BandPassFilter(audiolet, 3000);
+    // Filter
+    this.filter = new BandPassFilter(audiolet, 3000);
 
-        this.upMixer = new UpMixer(audiolet, 2);
+    this.upMixer = new UpMixer(audiolet, 2);
 
-        // Connect the main signal path
-        this.white.connect(this.filter);
-        this.filter.connect(this.gain);
+    // Connect the main signal path
+    this.white.connect(this.filter);
+    this.filter.connect(this.gain);
 
-        // Connect the gain envelope
-        this.gainEnv.connect(this.gainEnvMulAdd);
-        this.gainEnvMulAdd.connect(this.gain, 0, 1);
-        this.gain.connect(this.upMixer);
-        this.upMixer.connect(this.outputs[0]);
+    // Connect the gain envelope
+    this.gainEnv.connect(this.gainEnvMulAdd);
+    this.gainEnvMulAdd.connect(this.gain, 0, 1);
+    this.gain.connect(this.upMixer);
+    this.upMixer.connect(this.outputs[0]);
 }
 
 var AudioletApp = function() {
@@ -145,13 +145,135 @@ var AudioletApp = function() {
 
         this.audiolet.scheduler.addRelative(14, function() {
             this.playNote(262, 2);
+        }.bind(this));
+
+       this.audiolet.scheduler.addRelative(16, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(17, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(18, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(19, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(20, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(21, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(22, function() {
+            this.playNote(294, 2);
+        }.bind(this));
+
+       this.audiolet.scheduler.addRelative(24, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(25, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(26, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(27, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(28, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(29, function() {
+            this.playNote(330, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(29.5, function() {
+            this.playNote(349, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(30, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(31, function() {
+            this.playNote(294, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(32, function() {
+            this.playNote(262, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(33, function() {
+            this.playNote(262, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(34, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(35, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(36, function() {
+            this.playNote(440, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(37, function() {
+            this.playNote(440, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(38, function() {
+            this.playNote(392, 2);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(40, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(41, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(42, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(43, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(44, function() {
+            this.playNote(294, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(45, function() {
+            this.playNote(294, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(45.5, function() {
+            this.playNote(330, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(46, function() {
+            this.playNote(262, 2);
             this.audiolet.scheduler.addRelative(2, function () {
                 resetPlayback();
             })
         }.bind(this));
-
     }.bind(this));
-
 };
 
 AudioletApp.prototype.playNote = function(frequency, length) {
@@ -214,7 +336,8 @@ function resetPlayback() {
     togglePlay();
     $("#tempoSlider").slider("option", "disabled", false);      
     $("#tempo").removeAttr("disabled");
-    $("#metronomeButton").removeAttr("disabled");
+    $("#metronomeCheckbox").removeAttr("disabled");
+    // $("#metronomeButton").removeAttr("disabled");
     $("#stopPlaybackBtn").attr("disabled", "disabled");
 }
 
@@ -230,11 +353,16 @@ function togglePause() {
     $("#playbackIcon").removeClass("play-color");
     $("#tempoSlider").slider("option", "disabled", true);   
     $("#tempo").attr("disabled", "disabled");
-    $("#metronomeButton").attr("disabled", "disabled");
+    $("#metronomeCheckbox").attr("disabled", "disabled");
+    // $("#metronomeButton").attr("disabled", "disabled");
 }
 
 function adjustVolume(newVol) {
     vol = newVol;
+    // audiolet has a bug when volume is 0, so change 0 to 0.00001
+    if (vol == 0) {
+        vol = 0.00001;
+    }
 }
 
 function adjustTempo(newTempo) {
