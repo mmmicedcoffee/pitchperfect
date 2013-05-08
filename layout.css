@@ -223,7 +223,6 @@ table {
 	margin-top:10px;
 	margin-bottom: 10px;
   	border: 1px solid #e3e3e3;
-  	border-bottom: 0px;
 	-webkit-border-radius: 4px;
     	-moz-border-radius: 4px;
         	border-radius: 4px;
@@ -247,7 +246,7 @@ table {
 .practice-header {
 	font-weight: bold;
 	text-align: center;
-	margin: 20px 2px 8px 2px;
+	margin: 25px 2px 8px 2px;
 }
 
 #checkboxLabel {

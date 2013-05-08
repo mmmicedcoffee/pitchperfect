@@ -30,7 +30,7 @@ var Synth = function(audiolet, frequency, length) {
     this.modulatorMulAdd = new MulAdd(this.audiolet, frequency / 2, frequency);
 
     this.gain = new Gain(this.audiolet);
-    this.envelope = new PercussiveEnvelope(this.audiolet, 1, 0.2, 0.2 + (0.3*length),
+    this.envelope = new PercussiveEnvelope(this.audiolet, 1, 0.15, 0.15 + (0.2*length),
         function() {
             this.audiolet.scheduler.addRelative(0, this.remove.bind(this));
         }.bind(this)
@@ -145,13 +145,135 @@ var AudioletApp = function() {
 
         this.audiolet.scheduler.addRelative(14, function() {
             this.playNote(262, 2);
+        }.bind(this));
+
+       this.audiolet.scheduler.addRelative(16, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(17, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(18, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(19, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(20, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(21, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(22, function() {
+            this.playNote(294, 2);
+        }.bind(this));
+
+       this.audiolet.scheduler.addRelative(24, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(25, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(26, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(27, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(28, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(29, function() {
+            this.playNote(330, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(29.5, function() {
+            this.playNote(349, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(30, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(31, function() {
+            this.playNote(294, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(32, function() {
+            this.playNote(262, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(33, function() {
+            this.playNote(262, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(34, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(35, function() {
+            this.playNote(392, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(36, function() {
+            this.playNote(440, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(37, function() {
+            this.playNote(440, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(38, function() {
+            this.playNote(392, 2);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(40, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(41, function() {
+            this.playNote(349, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(42, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(43, function() {
+            this.playNote(330, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(44, function() {
+            this.playNote(294, 1);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(45, function() {
+            this.playNote(294, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(45.5, function() {
+            this.playNote(330, 0.5);
+        }.bind(this));
+
+        this.audiolet.scheduler.addRelative(46, function() {
+            this.playNote(262, 2);
             this.audiolet.scheduler.addRelative(2, function () {
                 resetPlayback();
             })
         }.bind(this));
-
     }.bind(this));
-
 };
 
 AudioletApp.prototype.playNote = function(frequency, length) {
