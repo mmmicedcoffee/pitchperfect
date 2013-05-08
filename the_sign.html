@@ -120,11 +120,11 @@
 
 		function play(){
 			Recorder.stop();
-			Recorder.play({
+			Recorder.play(/*{
 				progress: function(milliseconds){
 					document.getElementById("time").innerHTML = timecode(milliseconds);
 				}
-			});
+			}*/);
 		}
 
 		function stop(){
