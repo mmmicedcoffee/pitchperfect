@@ -149,10 +149,12 @@
 		$('#stopRecord').click(function() {
 			stop();
 			var title = prompt("Name your recording");
-                        $('.accordion-group').show();
-			$('#recordingTitle').text("Anna - "+title);
+			if (title != null) {
+                        	$('.accordion-group').show();
+				$('#recordingTitle').text("Anna - "+title);
+			}
 			document.getElementById("time").innerHTML = "0:00";
-			document.getElementById("stopRecord").disabled=true;
+                        document.getElementById("stopRecord").disabled=true;
 		});
 
 		$('#play').click(function() {
