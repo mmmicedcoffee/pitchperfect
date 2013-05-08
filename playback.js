@@ -36,7 +36,6 @@ var Synth = function(audiolet, frequency, length) {
         }.bind(this)
     );
     this.volumeEnvelope = new MulAdd(this.audiolet, vol);
-    console.log(vol);
 
     this.modulator.connect(this.modulatorMulAdd);
     this.modulatorMulAdd.connect(this.sine);
@@ -215,7 +214,8 @@ function resetPlayback() {
     togglePlay();
     $("#tempoSlider").slider("option", "disabled", false);      
     $("#tempo").removeAttr("disabled");
-    $("#metronomeButton").removeAttr("disabled");
+    $("#metronomeCheckbox").removeAttr("disabled");
+    // $("#metronomeButton").removeAttr("disabled");
     $("#stopPlaybackBtn").attr("disabled", "disabled");
 }
 
@@ -231,7 +231,8 @@ function togglePause() {
     $("#playbackIcon").removeClass("play-color");
     $("#tempoSlider").slider("option", "disabled", true);   
     $("#tempo").attr("disabled", "disabled");
-    $("#metronomeButton").attr("disabled", "disabled");
+    $("#metronomeCheckbox").attr("disabled", "disabled");
+    // $("#metronomeButton").attr("disabled", "disabled");
 }
 
 function adjustVolume(newVol) {
