@@ -52,32 +52,6 @@
     <script type='text/javascript' src="external_js/recorder.js"></script>
     <script type="text/javascript" src="practice_options.js"></script>
 
-	<script>
-        var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src','images/Ace_of_Base_-_The_Sign.mp3');
-
-        $.get();
-        audioElement.addEventListener("load", function(){
-        },true);
-        $('.play').click(function(){
-        	if (running()){
-				audioElement.currentTime = 2;
-				audioElement.pause();
-        	}
-        	else{
-        		audioElement.play();
-        		audioElement.currentTime = 2;
-        	}
-        });
-        $('.record').click(function(){
-        	
-        });
-
-		function running() {
-    		return $('.play').hasClass('active');
-		}
-	</script>
-
 </head>
 
 <body>
@@ -160,6 +134,30 @@
 		$('#play').click(function() {
 			play();
 		})
+
+        	var audioElement = document.createElement('audio');
+        	audioElement.setAttribute('src','images/Ace_of_Base_-_The_Sign.mp3');
+
+        	$.get();
+        	audioElement.addEventListener("load", function(){
+        	},true);
+        	$('#playSample').click(function(){
+                	if (running()){
+                                audioElement.currentTime = 2;
+                                audioElement.pause();
+                	}
+                	else{
+                      		audioElement.play();
+                        	audioElement.currentTime = 2;
+                	}
+        	});
+	        $('.record').click(function(){
+
+       		});
+
+                function running() {
+                	return $('#playSample').hasClass('active');
+                }
 
 		})
 	</script>
@@ -303,7 +301,7 @@
 										<div class="accordion-heading">
 											<div class="row-fluid">
 												<div class="span2">
-													<button class="btn btn-small play" style="margin:5px;">
+													<button class="btn btn-small play" style="margin:5px;" id="playSample">
 					    								<i class="icon-play play-color"></i>
 						    						</button>
 						    					</div>
